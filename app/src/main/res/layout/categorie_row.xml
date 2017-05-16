@@ -8,6 +8,7 @@
     <com.pkmmte.view.CircularImageView
         android:layout_width="80dp"
         android:layout_height="80dp"
+        android:layout_centerVertical="true"
         android:id="@+id/categorieImg"
         android:src="@drawable/categorie_classiques"
         android:layout_marginLeft="14dp"

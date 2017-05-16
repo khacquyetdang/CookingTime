@@ -1,6 +1,8 @@
 package khacquyetdang.android.com.cookingtime;
 
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -34,7 +36,8 @@ public class MainActivity extends AppCompatActivity {
         categoriesAdapter = new CategoriesAdapter(MainActivity.this);
 
         categoriesRecyclerView = (RecyclerView) findViewById(R.id.categoryRecyclerView);
-        //categoriesRecyclerView.setItemAnimator(new DefaultItemAnimator());
+        categoriesRecyclerView.addItemDecoration(new DividerItemDecoration(MainActivity.this));
+        categoriesRecyclerView.setItemAnimator(new DefaultItemAnimator());
         categoriesRecyclerView.setAdapter(categoriesAdapter);
         categoriesRecyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
     }
@@ -65,6 +68,34 @@ public class MainActivity extends AppCompatActivity {
                 )
         );
 
+    }
+
+    public class DividerItemDecoration extends RecyclerView.ItemDecoration {
+
+        private Drawable mDivider;
+
+        public DividerItemDecoration(Context context) {
+            mDivider = context.getResources().getDrawable(R.drawable.line_divider);
+        }
+
+        @Override
+        public void onDrawOver(Canvas c, RecyclerView parent, RecyclerView.State state) {
+            int left = parent.getPaddingLeft();
+            int right = parent.getWidth() - parent.getPaddingRight();
+
+            int childCount = parent.getChildCount();
+            for (int i = 0; i < childCount; i++) {
+                View child = parent.getChildAt(i);
+
+                RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) child.getLayoutParams();
+
+                int top = child.getBottom() + params.bottomMargin;
+                int bottom = top + mDivider.getIntrinsicHeight();
+
+                mDivider.setBounds(left, top, right, bottom);
+                mDivider.draw(c);
+            }
+        }
     }
 
     /**
