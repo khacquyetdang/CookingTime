@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.pkmmte.view.CircularImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:id="@+id/categorieImg"
+        android:src="@drawable/categorie_classiques"
+        android:layout_marginLeft="14dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="12dp"
+        app:border="true"
+        app:border_color="#EEEEEE"
+        app:border_width="2dp"
+        app:shadow="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_centerVertical="true"
+        android:orientation="vertical"
+        android:layout_toRightOf="@id/categorieImg">
+
+        <TextView
+            android:id="@+id/categorieTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="marquee"
+            android:lines="1"
+            android:paddingTop="10dp"
+            android:text="Naturally Flavored Fruit &amp; Herb Detox Water"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/categorieDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:lines="2"
+            android:paddingBottom="10dp"
+            android:text="This tasty brew only takes ten minutes to prepare."
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+    </LinearLayout>
+</RelativeLayout>
