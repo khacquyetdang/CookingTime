@@ -18,10 +18,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import khacquyetdang.android.com.cookingtime.database.Categorie;
+import khacquyetdang.android.com.cookingtime.database.Plat;
 
 import static java.util.Arrays.asList;
 
-public class MainActivity extends AppCompatActivity {
+public class CategoriesActivity extends AppCompatActivity {
 
 
     private List<Categorie> categories;
@@ -33,20 +34,75 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
         setUpCategories();
-        categoriesAdapter = new CategoriesAdapter(MainActivity.this);
+        categoriesAdapter = new CategoriesAdapter(CategoriesActivity.this);
 
         categoriesRecyclerView = (RecyclerView) findViewById(R.id.categoryRecyclerView);
-        categoriesRecyclerView.addItemDecoration(new DividerItemDecoration(MainActivity.this));
+        //categoriesRecyclerView.addItemDecoration(new DividerItemDecoration(CategoriesActivity.this));
         categoriesRecyclerView.setItemAnimator(new DefaultItemAnimator());
         categoriesRecyclerView.setAdapter(categoriesAdapter);
-        categoriesRecyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+        categoriesRecyclerView.setLayoutManager(new LinearLayoutManager(CategoriesActivity.this));
     }
 
     public void setUpCategories() {
+
+
+        Plat oeufDur = new Plat("CUISSON D’UN OEUF DUR",
+                "Dur dur la cuisson des oeufs ? Mais non c’est pas si compliqué, suivez le guide !",
+                R.drawable.plat_oeufs_dur);
+
+
+        Plat oeufALaCoque = new Plat("OEUF À LA COQUE",
+                "Classique parmi les classique, découvrez quelle est le bon temps de cuisson pour un oeuf à la coque...",
+                R.drawable.plat_oeufs_brouilles);
+
+        Plat frites = new Plat("Les Frites",
+                "Au four ou à la friteuse, un classique incontournable pour les enfants commas les plus grands… Apprenez à les faire dorées et croustillantes!",
+                R.drawable.plat_frites);
+
+
+        Plat riz = new Plat("LE RIZ",
+                "Élément de base de nombreux plats asiatiques ou espagnols, le riz peut se cuire de différentes manières selon son origine (blanc, jaune, long…).",
+                R.drawable.plat_riz);
+
+
+        Plat pate = new Plat("LES PÂTES",
+                "Pas besoin d’être italien pour réussir la cuisson de ses pâtes, « al dente » ou non. Fermes ou fondantes, à vous de choisir.",
+                R.drawable.plat_pates);
+
+
+        Plat croqueMonsieur = new Plat("CUISSON D’UN OEUF DUR",
+                "Du pain de mie, du jambon, du fromage et une noix de beurre… L’indémodable sandwich toasté, au four ou à la poêle !",
+                R.drawable.plat_oeufs_dur);
+
+
+        Plat oeufPoche = new Plat("OEUF POCHÉ",
+                "Découvrez les astuces pour réussir à tous les coups la cuisson d’un oeuf poché.",
+                R.drawable.plat_oeuf_poche);
+
+
+        Plat quicheLorraine = new Plat("QUICHE LORRAINE",
+                "Les ingrédients pour une quiche lorraine « inratable »",
+                R.drawable.plat_quiche_lorraine);
+
+
+        Plat oeufBrouille = new Plat(" LES OEUFS BROUILLÉS",
+                "Les oeufs brouillés, un grand classique de la cuisine New-Yorkaise et anglo-saxonne !",
+                R.drawable.plat_oeufs_brouilles);
+
+
+        Plat coquillettes = new Plat(" LES OEUFS BROUILLÉS",
+                "Les oeufs brouillés, un grand classique de la cuisine New-Yorkaise et anglo-saxonne !",
+                R.drawable.plat_oeufs_brouilles);
+
+        ArrayList<Plat> classiquePlats = new ArrayList<>(asList(
+                oeufDur, oeufALaCoque, frites, riz, pate, croqueMonsieur, oeufPoche, quicheLorraine, oeufBrouille, coquillettes
+        ));
+        Categorie classiqueCategorie = new Categorie("LES CLASSIQUES",
+                "Pâtes, riz, frites, oeufs et bien d’autres classiques dont les temps de cuisson sont invariables."
+                , R.drawable.categorie_classiques);
+        classiqueCategorie.setPlats(classiquePlats);
         categories = new ArrayList<>(
-                asList(new Categorie("LES CLASSIQUES",
-                                "Pâtes, riz, frites, oeufs et bien d’autres classiques dont les temps de cuisson sont invariables."
-                                , R.drawable.categorie_classiques),
+                asList(classiqueCategorie,
                         new Categorie("BARBECUE",
                                 "Retrouvez ici tous les temps de cuisson pour vos viandes et poissons au barbecue."
                                 , R.drawable.categorie_bbq),
