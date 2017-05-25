@@ -40,14 +40,6 @@ public class Categorie {
         this.title = title;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public int getImgUrl() {
         return imgUrl;
     }

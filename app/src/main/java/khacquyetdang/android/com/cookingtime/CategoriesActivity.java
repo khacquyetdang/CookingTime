@@ -1,6 +1,7 @@
 package khacquyetdang.android.com.cookingtime;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
@@ -46,12 +47,12 @@ public class CategoriesActivity extends AppCompatActivity {
     public void setUpCategories() {
 
 
-        Plat oeufDur = new Plat("CUISSON D’UN OEUF DUR",
+        Plat oeufDur = new Plat("Cuisson d’un oeuf dur",
                 "Dur dur la cuisson des oeufs ? Mais non c’est pas si compliqué, suivez le guide !",
-                R.drawable.plat_oeufs_dur);
+                R.drawable.plat_oeuf_dur);
 
 
-        Plat oeufALaCoque = new Plat("OEUF À LA COQUE",
+        Plat oeufALaCoque = new Plat("Oeuf à la coque",
                 "Classique parmi les classique, découvrez quelle est le bon temps de cuisson pour un oeuf à la coque...",
                 R.drawable.plat_oeufs_brouilles);
 
@@ -60,44 +61,44 @@ public class CategoriesActivity extends AppCompatActivity {
                 R.drawable.plat_frites);
 
 
-        Plat riz = new Plat("LE RIZ",
+        Plat riz = new Plat("Le riz",
                 "Élément de base de nombreux plats asiatiques ou espagnols, le riz peut se cuire de différentes manières selon son origine (blanc, jaune, long…).",
-                R.drawable.plat_riz);
+                R.drawable.plat_riz_blanc);
 
 
-        Plat pate = new Plat("LES PÂTES",
+        Plat pate = new Plat("Les pâtes",
                 "Pas besoin d’être italien pour réussir la cuisson de ses pâtes, « al dente » ou non. Fermes ou fondantes, à vous de choisir.",
                 R.drawable.plat_pates);
 
 
-        Plat croqueMonsieur = new Plat("CUISSON D’UN OEUF DUR",
+        Plat croqueMonsieur = new Plat("Cuisson d’un oeuf dur",
                 "Du pain de mie, du jambon, du fromage et une noix de beurre… L’indémodable sandwich toasté, au four ou à la poêle !",
-                R.drawable.plat_oeufs_dur);
+                R.drawable.plat_oeuf_dur);
 
 
-        Plat oeufPoche = new Plat("OEUF POCHÉ",
+        Plat oeufPoche = new Plat("Oeuf poché",
                 "Découvrez les astuces pour réussir à tous les coups la cuisson d’un oeuf poché.",
                 R.drawable.plat_oeuf_poche);
 
 
-        Plat quicheLorraine = new Plat("QUICHE LORRAINE",
+        Plat quicheLorraine = new Plat("Quiche lorraine",
                 "Les ingrédients pour une quiche lorraine « inratable »",
                 R.drawable.plat_quiche_lorraine);
 
 
-        Plat oeufBrouille = new Plat(" LES OEUFS BROUILLÉS",
+        Plat oeufBrouille = new Plat("Les oeufs brouillés",
                 "Les oeufs brouillés, un grand classique de la cuisine New-Yorkaise et anglo-saxonne !",
                 R.drawable.plat_oeufs_brouilles);
 
 
-        Plat coquillettes = new Plat(" LES OEUFS BROUILLÉS",
+        Plat coquillettes = new Plat("Les oeufs brouillés",
                 "Les oeufs brouillés, un grand classique de la cuisine New-Yorkaise et anglo-saxonne !",
                 R.drawable.plat_oeufs_brouilles);
 
         ArrayList<Plat> classiquePlats = new ArrayList<>(asList(
                 oeufDur, oeufALaCoque, frites, riz, pate, croqueMonsieur, oeufPoche, quicheLorraine, oeufBrouille, coquillettes
         ));
-        Categorie classiqueCategorie = new Categorie("LES CLASSIQUES",
+        Categorie classiqueCategorie = new Categorie("Les classiques",
                 "Pâtes, riz, frites, oeufs et bien d’autres classiques dont les temps de cuisson sont invariables."
                 , R.drawable.categorie_classiques);
         classiqueCategorie.setPlats(classiquePlats);
@@ -166,10 +167,8 @@ public class CategoriesActivity extends AppCompatActivity {
         }
         @Override
         public myViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-
             View view = inflater.inflate(R.layout.categorie_row,parent,false);
             myViewHolder holder = new myViewHolder(view);
-
             return holder;
         }
 
@@ -177,8 +176,15 @@ public class CategoriesActivity extends AppCompatActivity {
         public void onBindViewHolder(myViewHolder holder, int position) {
             Categorie categorie  = categories.get(position);
             holder._title.setText(categorie.getTitle());
-            holder._desc.setText(categorie.getDescription());
+            holder._desc.setText(categorie.getShortDescription());
             holder._imgview.setImageResource(categorie.getImgUrl());
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent platActivityIntent = new Intent(CategoriesActivity.this, PlatsActivity.class);
+                    startActivity(platActivityIntent);
+                }
+            });
         }
 
 

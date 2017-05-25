@@ -10,9 +10,16 @@ public class Plat {
     private int timesInMinutes;
     private int img_url;
 
-    public Plat(String name, String description, int timesInMinutes) {
+    public Plat(String name, String description, int img_url) {
         this.name = name;
         this.description = description;
+        this.img_url = img_url;
+    }
+
+    public Plat(String name, String description, int img_url, int timesInMinutes) {
+        this.name = name;
+        this.description = description;
+        this.img_url = img_url;
         this.timesInMinutes = timesInMinutes;
     }
 

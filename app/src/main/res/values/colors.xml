@@ -4,5 +4,7 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorBlueSky">#59d2ae</color>
+    <color name="colorTimeCooking">#8badd4</color>
+    <color name="colorPlatName">#313539</color>
 
 </resources>
