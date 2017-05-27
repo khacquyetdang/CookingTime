@@ -6,22 +6,32 @@ package khacquyetdang.android.com.cookingtime.database;
 
 public class Plat {
     private String name;
-    private String description;
+    private String shortDescription;
+    private String recipe;
     private int timesInMinutes;
     private int img_url;
 
-    public Plat(String name, String description, int img_url) {
+    public Plat(String name, String shortDescription, int img_url) {
         this.name = name;
-        this.description = description;
+        this.shortDescription = shortDescription;
         this.img_url = img_url;
     }
 
-    public Plat(String name, String description, int img_url, int timesInMinutes) {
+    public Plat(String name, String shortDescription, int img_url, int timesInMinutes) {
         this.name = name;
-        this.description = description;
+        this.shortDescription = shortDescription;
         this.img_url = img_url;
         this.timesInMinutes = timesInMinutes;
     }
+
+    public Plat(String name, String shortDescription, String recipe, int img_url, int timesInMinutes) {
+        this.name = name;
+        this.shortDescription = shortDescription;
+        this.img_url = img_url;
+        this.timesInMinutes = timesInMinutes;
+        this.recipe = recipe;
+    }
+
 
     public String getName() {
         return name;
@@ -31,12 +41,12 @@ public class Plat {
         this.name = name;
     }
 
-    public String getDescription() {
-        return description;
+    public String getShortDescription() {
+        return shortDescription;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setShortDescription(String shortDescription) {
+        this.shortDescription = shortDescription;
     }
 
     public int getTimesInMinutes() {
