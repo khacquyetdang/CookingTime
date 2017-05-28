@@ -1,12 +1,23 @@
 package khacquyetdang.android.com.cookingtime.database;
 
+import java.io.Serializable;
+
 /**
  * Created by dang on 17/05/2017.
  */
 
-public class Plat {
+public class Plat implements Serializable {
     private String name;
     private String shortDescription;
+
+    public String getRecipe() {
+        return recipe;
+    }
+
+    public void setRecipe(String recipe) {
+        this.recipe = recipe;
+    }
+
     private String recipe;
     private int timesInMinutes;
     private int img_url;

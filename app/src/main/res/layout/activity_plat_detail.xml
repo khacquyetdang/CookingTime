@@ -24,10 +24,9 @@
             app:titleEnabled="false">
 
             <ImageView
-                android:id="@+id/htab_header"
+                android:id="@+id/platImageAppBar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/plat_riz_blanc"
                 android:fitsSystemWindows="true"
                 android:scaleType="centerCrop"
                 app:layout_collapseMode="parallax" />

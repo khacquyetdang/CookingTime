@@ -152,7 +152,7 @@ public class PlatsActivity extends AppCompatActivity {
 
         @Override
         public void onBindViewHolder(myViewHolder holder, int position) {
-            Plat plat = plats.get(position);
+            final Plat plat = plats.get(position);
             holder._name.setText(plat.getName());
             Picasso.with(getBaseContext()).load(plat.getImg_url()).fit().centerCrop().into(holder._imgview);
             String timeCooking = String.format(getResources().getString(R.string.time_cooking_in_minutes), plat.getTimesInMinutes());
@@ -161,6 +161,7 @@ public class PlatsActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     Intent platDetailIntent = new Intent(PlatsActivity.this, PlatDetailActivity.class);
+                    platDetailIntent.putExtra("extra_plat", plat);
                     startActivity(platDetailIntent);
                 }
             });
