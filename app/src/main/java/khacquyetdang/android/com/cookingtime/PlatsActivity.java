@@ -1,6 +1,7 @@
 package khacquyetdang.android.com.cookingtime;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -8,6 +9,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -34,6 +36,9 @@ public class PlatsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_plat_list);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         setUpPlats();
         platsAdapter = new PlatsAdapter(PlatsActivity.this);
 
@@ -116,6 +121,17 @@ public class PlatsActivity extends AppCompatActivity {
         plats = classiquePlats;
     }
 
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     /**
      * Created by Yasir Ameen on 1/26/2016.
      */
@@ -144,7 +160,8 @@ public class PlatsActivity extends AppCompatActivity {
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
+                    Intent platDetailIntent = new Intent(PlatsActivity.this, PlatDetailActivity.class);
+                    startActivity(platDetailIntent);
                 }
             });
         }
