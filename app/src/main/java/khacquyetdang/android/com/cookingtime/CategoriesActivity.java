@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import khacquyetdang.android.com.cookingtime.database.Categorie;
+import khacquyetdang.android.com.cookingtime.database.DataBaseManager;
 import khacquyetdang.android.com.cookingtime.database.Plat;
 
 import static java.util.Arrays.asList;
@@ -34,9 +35,9 @@ public class CategoriesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
-        setUpCategories();
-        categoriesAdapter = new CategoriesAdapter(CategoriesActivity.this);
 
+        categories = DataBaseManager.getInstance().getCategories();
+        categoriesAdapter = new CategoriesAdapter(CategoriesActivity.this);
         categoriesRecyclerView = (RecyclerView) findViewById(R.id.categoryRecyclerView);
         //categoriesRecyclerView.addItemDecoration(new DividerItemDecoration(CategoriesActivity.this));
         categoriesRecyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -44,88 +45,6 @@ public class CategoriesActivity extends AppCompatActivity {
         categoriesRecyclerView.setLayoutManager(new LinearLayoutManager(CategoriesActivity.this));
     }
 
-    public void setUpCategories() {
-
-
-        Plat oeufDur = new Plat("Cuisson d’un oeuf dur",
-                "Dur dur la cuisson des oeufs ? Mais non c’est pas si compliqué, suivez le guide !",
-                R.drawable.plat_oeuf_dur);
-
-
-        Plat oeufALaCoque = new Plat("Oeuf à la coque",
-                "Classique parmi les classique, découvrez quelle est le bon temps de cuisson pour un oeuf à la coque...",
-                R.drawable.plat_oeufs_brouilles);
-
-        Plat frites = new Plat("Les Frites",
-                "Au four ou à la friteuse, un classique incontournable pour les enfants commas les plus grands… Apprenez à les faire dorées et croustillantes!",
-                R.drawable.plat_frites);
-
-
-        Plat riz = new Plat("Le riz",
-                "Élément de base de nombreux plats asiatiques ou espagnols, le riz peut se cuire de différentes manières selon son origine (blanc, jaune, long…).",
-                R.drawable.plat_riz_blanc);
-
-
-        Plat pate = new Plat("Les pâtes",
-                "Pas besoin d’être italien pour réussir la cuisson de ses pâtes, « al dente » ou non. Fermes ou fondantes, à vous de choisir.",
-                R.drawable.plat_pates);
-
-
-        Plat croqueMonsieur = new Plat("Cuisson d’un oeuf dur",
-                "Du pain de mie, du jambon, du fromage et une noix de beurre… L’indémodable sandwich toasté, au four ou à la poêle !",
-                R.drawable.plat_oeuf_dur);
-
-
-        Plat oeufPoche = new Plat("Oeuf poché",
-                "Découvrez les astuces pour réussir à tous les coups la cuisson d’un oeuf poché.",
-                R.drawable.plat_oeuf_poche);
-
-
-        Plat quicheLorraine = new Plat("Quiche lorraine",
-                "Les ingrédients pour une quiche lorraine « inratable »",
-                R.drawable.plat_quiche_lorraine);
-
-
-        Plat oeufBrouille = new Plat("Les oeufs brouillés",
-                "Les oeufs brouillés, un grand classique de la cuisine New-Yorkaise et anglo-saxonne !",
-                R.drawable.plat_oeufs_brouilles);
-
-
-        Plat coquillettes = new Plat("Les oeufs brouillés",
-                "Les oeufs brouillés, un grand classique de la cuisine New-Yorkaise et anglo-saxonne !",
-                R.drawable.plat_oeufs_brouilles);
-
-        ArrayList<Plat> classiquePlats = new ArrayList<>(asList(
-                oeufDur, oeufALaCoque, frites, riz, pate, croqueMonsieur, oeufPoche, quicheLorraine, oeufBrouille, coquillettes
-        ));
-        Categorie classiqueCategorie = new Categorie("Les classiques",
-                "Pâtes, riz, frites, oeufs et bien d’autres classiques dont les temps de cuisson sont invariables."
-                , R.drawable.categorie_classiques);
-        classiqueCategorie.setPlats(classiquePlats);
-        categories = new ArrayList<>(
-                asList(classiqueCategorie,
-                        new Categorie("BARBECUE",
-                                "Retrouvez ici tous les temps de cuisson pour vos viandes et poissons au barbecue."
-                                , R.drawable.categorie_bbq),
-                        new Categorie("LES GRATINS",
-                                "Apprenez comment réaliser la cuisson parfaite d’un gratin en obtenant une texture dorée et croustillante."
-                                , R.drawable.categorie_gratin),
-                        new Categorie("LES DESSERTS",
-                                "Les temps de cuissons en pâtisserie sont précis et très important. La cuisson des desserts n’aura plus aucun secret pour vous !"
-                                , R.drawable.categorie_desserts),
-                        new Categorie("LES VIANDES",
-                                "Pour connaître le temps de cuisson d’une viande saignante, bleue ou bien cuite."
-                                , R.drawable.categorie_viandes),
-                        new Categorie("LES LÉGUMES ET FÉCULENTS",
-                                "Découvrez les techniques de cuissons des légumes et féculents au four, à l’eau, à la vapeur, à la poêle, etc..."
-                                , R.drawable.categorie_legumes),
-                        new Categorie("POISSONS ET FRUITS DE MER",
-                                "La pêche a été bonne ? Retrouvez ici les temps de cuissons adéquats pour vos poissons et crustacés."
-                                , R.drawable.categorie_fruit_de_mer)
-                )
-        );
-
-    }
 
     public class DividerItemDecoration extends RecyclerView.ItemDecoration {
 
@@ -174,7 +93,7 @@ public class CategoriesActivity extends AppCompatActivity {
 
         @Override
         public void onBindViewHolder(myViewHolder holder, int position) {
-            Categorie categorie  = categories.get(position);
+            final Categorie categorie  = categories.get(position);
             holder._title.setText(categorie.getTitle());
             holder._desc.setText(categorie.getShortDescription());
             holder._imgview.setImageResource(categorie.getImgUrl());
@@ -182,6 +101,7 @@ public class CategoriesActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     Intent platActivityIntent = new Intent(CategoriesActivity.this, PlatsActivity.class);
+                    platActivityIntent.putExtra("categorie", categorie);
                     startActivity(platActivityIntent);
                 }
             });

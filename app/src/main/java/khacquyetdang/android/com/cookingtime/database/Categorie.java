@@ -1,12 +1,13 @@
 package khacquyetdang.android.com.cookingtime.database;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by dang on 16-May-17.
  */
 
-public class Categorie {
+public class Categorie implements Serializable {
     private String title;
     private String shortDescription;
     private String description;
