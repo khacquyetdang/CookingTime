@@ -39,6 +39,10 @@ public class DataBaseManager {
         Categorie viandeCategorie = new Categorie("Les viandes",
                 "Pour connaître le temps de cuisson d’une viande saignante, bleue ou bien cuite."
                 , R.drawable.categorie_viandes);
+        Categorie gratinCategorie = new Categorie("Les gratins",
+                "Apprenez comment réaliser la cuisson parfaite d’un gratin en obtenant une texture dorée et croustillante."
+                , R.drawable.categorie_gratin);
+        gratinCategorie.setPlats(setUpGratin());
         classiqueCategorie.setPlats(setUpClassiquePlat());
         dessertCategorie.setPlats(setUpDessert());
         viandeCategorie.setPlats(setUpViandes());
@@ -48,9 +52,7 @@ public class DataBaseManager {
                         new Categorie("Barbecue",
                                 "Retrouvez ici tous les temps de cuisson pour vos viandes et poissons au barbecue."
                                 , R.drawable.categorie_bbq),
-                        new Categorie("Les gratins",
-                                "Apprenez comment réaliser la cuisson parfaite d’un gratin en obtenant une texture dorée et croustillante."
-                                , R.drawable.categorie_gratin),
+                        gratinCategorie,
                         viandeCategorie,
                         new Categorie("Les légumes et féculents",
                                 "Découvrez les techniques de cuissons des légumes et féculents au four, à l’eau, à la vapeur, à la poêle, etc..."
@@ -264,10 +266,15 @@ public class DataBaseManager {
                 "<div><h1>Filet mignon d’agneau</h1><h2>Le temps de cuisson du filet mignon d’agneau</h2><p>Le filet d’agneau est une viande composée de deux parties qui se trouvent de part et d’autre de l’échine, dans la région lombaire de l’agneau. Riche en protéine, mais aussi en zinc et en vitamines B, c’est une viande appréciée en toute saison, dont la&nbsp;saveur délicate fait d’elle une viande festive que l’on sert notamment à Pâques.</p><p>Le filet d’agneau est une viande savoureuse dont la cuisson doit respecter la tendresse, découvrez comment procéder selon le mode de cuisson choisi.</p><h3>Cuisson au four</h3><p>Le temps de cuisson du filet mignon d’agneau au four est proportionnel à son poids.</p><p>Comptez <strong>25mn</strong> de cuisson <strong>par kilo</strong> de viande.</p><p>Enfournez le filet d’agneau à <strong>200°C, </strong>assaisonné de thym et de romarin par exemple.</p><h3>Cuisson à la poêle</h3><p>Le filet mignon d’agneau poêlé est un délice !</p><p>Faites revenir votre viande dans une poêle pendant <strong>30 à 35 mn</strong>, accompagnée d’une noisette de beurre ou d’un filet d’huile d’olive.</p><p>Vous pouvez en profiter pour faire revenir toute sorte de légumes avec votre viande, comme des carottes par exemple.</p><p><em>Le jus de cuisson peut être utilisé pour réaliser une sauce.</em></p></div>",
                 R.drawable.plat_viande_filet_agneau_au_four, 25);
 
+        Plat magretDeCanard = new Plat("Magret de canard au barbecue",
+                "La cuisson parfaite d’un magret de canard consiste à faire fondre la graisse tout en gardant une peau croustillante et une viande rosée.",
+                "<div><h1>Cuisson au barbecue</h1><h2>Temps de cuisson du magret de canard au barbecue</h2><p><em>Pensez toujours à sortir vos magrets du frigo une heure avant leur préparation.</em></p><h3>Combien de temps ?</h3><p><strong>La cuisson du magret de canard au&nbsp;barbecue (gaz, charbon ou modèle de type Weber – on évitera l’électrique )</strong>&nbsp;est rapide sur forte braise ou à feu très vif. Pas plus de&nbsp;<strong>5 à 6 minutes</strong>&nbsp;par face même pour des gros magrets. Toutefois, il convient de faire attention à l’excès de graisse qui aura tendance à s’enflammer sous la viande. Il convient donc généralement de réduire autant que possible la partie graisseuse.</p><h3>Une alternative : les brochettes</h3><p>Mieux, n’hésitez à réaliser des brochettes avec votre magret en le coupant en huit, d’abord en deux dans la longueur puis en quatre dans la largeur. En ne laissant que le gras nécessaire à la cuisson. Pour parfumer vos magrets n’hésitez pas à ajouter des morceaux de fruits à vos brochettes (pruneaux, abricots, etc..) que vous pourrez servir avec la semoule.</p><p>Pour la cuisson des brochettes de magret de canard, 8 à 10 minutes tout au plus en les retournant très régulièrement. Attention au canard trop cuit qui devient alors très fort en bouche !</p><p><em>Si vous utilisez un barbecue classique (à charbon) pour la cuisson de vos magrets, évitez de trop le charger en viande et munissez vous d’un peu d’eau pour arroser les braises en cours de cuisson.</em></p><h3>Dressage</h3><p>Vous pouvez servir le magret entier ou servir un demi magret par assiette. Si vous le servez émincé en tranche, pensez à chauffer vos assiettes préalablement car le magret tranché refroidit très vite</p></div>",
+                R.drawable.plat_viande_magret_canard_bbc, 10);
+
         return new ArrayList<>(asList(
                 platPateSable, rotiDeBoeufAuFour, rotiDeBoeufAlaCocotte,
-                filetMignonAgneau,
-                steakHache, canard, rosbeef, piece_a_fondue, tournedos
+                filetMignonAgneau, platBoeufBourguignon, platRotiDePorc,
+                steakHache, canard, rosbeef, piece_a_fondue, tournedos, magretDeCanard
         ));
 
     }
@@ -393,6 +400,55 @@ public class DataBaseManager {
                 platCremeAnglaise, platPateSable, platFlanAuxOeufs, dessertFondantChocolat,
                 platdesserttarteauPommes, platdessertCremeAuCaramel,
                 financiers, crumble, clafoutis, meringue, platdessertPommesAuFour
+        ));
+
+    }
+
+    public ArrayList<Plat> setUpGratin() {
+
+        Plat gratinDauphinois = new Plat("Dauphinois",
+                "Originaire de la région du Dauphiné, c’est la star des gratins. Découvrez comment obtenir une cuisson fondante.",
+                "<div><h1>Gratin dauphinois</h1><h2 style=\"text-align: justify;\">Temps de cuisson du gratin dauphinois</h2><p style=\"text-align: justify;\">Le gratin dauphinois est l’une des recettes traditionnelles phares de la région lyonnaise. Pour garder un aspect doré sur le dessus et obtenir des tranches de pommes de terre moelleuse, <strong>la cuisson du gratin</strong> dauphinois sera primordiale.</p><p style=\"text-align: justify;\">Dans votre plat à gratin, disposez les pommes de terres en tranches puis versez avec du lait. Mettez votre plat au <strong>four thermostat 6</strong> (180°C) pendant <strong>45 minutes à 1 heure</strong>. Selon la quantité de pommes de terre et la taille de votre gratin, la cuisson pourra être plus longue pour garantir son côté moelleux.</p><p style=\"text-align: justify;\">Attention, si le haut de votre gratin dauphinois dore trop, n’hésitez pas à le couvrir d’une feuille d’aluminium pendant la fin de la cuisson.</p></div>"
+                , R.drawable.plat_gratin_dauphinois, 45);
+
+
+        Plat gratinPates = new Plat("Pâtes",
+                "Un grand classique dans l’univers des gratins ! Un plat simple dont le secret réside dans le croquant du dessus et le fondant des pâtes.",
+                "<div><h1>Crème anglaise</h1><h2>Temps de cuisson d’une crème anglaise</h2>" +
+                        "<p style=\"text-align: justify;\">" +
+                        "Placez la casserole sur un feu moyen sans cesser de remuer le mélange à l’aide d’une cuillère en bois. La cuisson doit atteindre très précisément la température de <strong>85°C</strong>, mais pas plus, sinon elle sera trop épaisse et des grumeaux commenceront à se former.</p><p style=\"text - align:justify; \">Si vous ne disposez pas d’un thermomètre pour contrôler la température, comptez <strong>entre 2 et 3 minutes de cuisson</strong> pour 350 grammes de crème anglaise. La crème doit épaissir légèrement et devenir plus claire.</p><p style=\"text - align:justify;\">Pour vérifier la cuisson, vous pouvez passer votre doigt sur le dos de la spatule en bois nappée de crème : si la trace reste visible et que la crème ne coule pas dans le sillon que vous avez tracé, la crème est prête.</p></div>",
+                R.drawable.plat_gratin_pate,
+                15);
+
+        Plat gratinCourgettes
+                = new Plat("Courgettes",
+                "La réussite d’un délicieux gratin de courgettes dépend en partie de sa cuisson. Découvrez comment réaliser ce plat facile et idéal en toutes saisons.",
+                "<div><h1>Gratin de courgettes</h1><h2>Temps de cuisson du gratin de courgettes</h2><p>Pour réussir un gratin savoureux et croquant, il est primordial de bien faire dégorger les courgettes.</p><p>Pour cela, coupez-les en rondelles épaisses et plongez-les dans une casserole d’eau bouillante pendant<strong> 15 mn.</strong></p><p>Après les avoir bien égouttées, disposez vos courgettes dans un plat à gratin, rajoutez votre liant et saupoudrez le tout de fromage. Pour finir, placez votre plat au four pendant 45 mn, en actionnant le mode «&nbsp;grill&nbsp;» durant&nbsp;<strong>les 5 dernières minutes.</strong></p><p><em>Savez-vous qu’il est possible de réaliser rapidement un petit gratin de courgettes au micro-ondes ?</em></p><p>Placez vos rondelles de courgettes dans un récipient rempli d’eau salé, et laissez-les cuire pendant <strong> 6mn</strong> à pleine puissance. Disposez-les ensuite dans un petit plat à gratin, ajoutez votre liant et du fromage, puis faîtes cuire le tout pendant <strong> 6mn !</strong></p></div>",
+                R.drawable.plat_gratin_courgette, 60);
+
+
+        Plat gratinCourge = new Plat("Courge",
+                "Une préparation classique et simple. Pas de quoi en faire tout un flan !",
+                "<div><h1>Gratin de courge</h1><h2>Temps de cuisson du gratin de courge</h2><p>La courge, aliment incontournable de l’hiver, se déguste de nombreuses façons : soupe, soufflé, purée… Sans oublier l’incontournable gratin, qui apporte plus de consistance et de croquant au légume. La cuisson de ce plat d’automne requiert toutefois une attention toute particulière afin de conserver la chair de la courge tendre et juteuse.</p><p>Commencez par préparer vos courges et votre liant, puis placez le tout dans un plat à gratin.</p><p>Saupoudrez généreusement votre préparation de gruyère râpé.</p><p>Ensuite, enfournez votre gratin et laissez-le cuire pendant <strong>30 mn</strong> à 200°C.</p><p>Pour un gratin bien croquant, activez le grill de votre four pendant les 5 dernières minutes de cuisson.</p><p><em>Pour relever le gout des courges, râpez un peu de <a title=\"Noix de muscade\" href=\"http://www.tempsdecuisson.net/dico/noix-de-muscade\">noix de muscade</a> dessus !</em></p></div>",
+                R.drawable.plat_gratin_courge, 30);
+
+
+        Plat gratinEndives = new Plat("Endives",
+                "Maîtrisez parfaitement la cuisson du gratin d’endives, et réalisez de nombreuses variantes originales !",
+                "<div><h1>Gratin d’endives</h1><h2>Temps de cuisson du gratin d’endives</h2><p>Généralement réalisé avec du jambon et une sauce béchamel, le gratin d’endives&nbsp;s’accommode tout aussi bien avec d’autres aliments, comme le bleu d’Auvergne, le bacon ou bien le saumon.</p><p>Du classique gratin d’endives jambon béchamel, aux gratins d’endives les plus originaux, la cuisson de ce plat doit être parfaitement maîtrisé afin de conserver la bonne tenue des endives tout en gratinant parfaitement le dessus.</p><p>Voici la marche à suivre :</p><p>Commencez par faire cuire vos endives à la vapeur pendant <strong>10 mn.</strong><br>Veillez bien à ne pas dépasser 15mn de cuisson sous peine d’obtenir des endives trop molles par la suite.<br>Pendant ce temps là préchauffez votre four en position grill.<br>Laissez refroidir quelques instants les endives, puis déposez-les dans un plat à gratin.<br>Rajoutez les ingrédients de votre choix (sauce béchamel, gruyères, jambon, etc…), et enfournez le tout pendant <strong>10mn</strong> jusqu’à obtenir une texture craquante et dorée.</p><p><em>Bon appétit !</em></p></div>",
+                R.drawable.plat_gratin_endive, 10);
+
+
+        Plat aubergines = new Plat("Aubergines",
+                "Découvrez comment cuire le gratin d’aubergines pour obtenir un gratin léger et parfaitement doré.",
+                "<div><h1>Gratin d’aubergines</h1><h2>Temps de cuisson du gratin d’aubergines</h2><p>L<a title=\"Aubergine\" href=\"http://www.tempsdecuisson.net/les-legumes-et-feculents/aubergine\">‘aubergine</a>, légume composé à plus de 90% d’eau et riche de nombreux vitamines et minéraux, doit être cuite avec précaution pour conserver sa bonne tenue ainsi que ses bienfaits.</p><p>Commencez par éplucher les aubergines, puis découpez-les en rondelles.</p><p>Idéalement, saupoudrez les rondelles de sel puis faites-les dégorger pendant 1 heure; ce qui vous permettra d’obtenir un gratin qui ne rendra pas trop de jus.</p><p>Faites revenir les aubergines légèrement huilées dans une grande poêle, à feu moyen pendant <strong>10 mn</strong>.</p><p>Pour finir, disposez les aubergines accompagnées des aliments de votre choix (coulis de tomates, viande…), déposez une fine couche de gruyère sur le dessus puis enfournez votre gratin <strong>20 mn</strong> à 200°C.</p><p><em>Bon appétit !</em></p></div>"
+                ,
+                R.drawable.plat_gratin_aubergine, 30);
+
+
+        return new ArrayList<>(asList(
+                gratinPates, gratinCourgettes, gratinCourge, gratinEndives,
+                aubergines, gratinDauphinois
         ));
 
     }
