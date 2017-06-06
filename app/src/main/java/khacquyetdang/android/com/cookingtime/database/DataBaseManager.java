@@ -36,8 +36,12 @@ public class DataBaseManager {
         Categorie dessertCategorie = new Categorie("Les desserts",
                 "Les temps de cuissons en pâtisserie sont précis et très important. La cuisson des desserts n’aura plus aucun secret pour vous !"
                 , R.drawable.categorie_desserts);
+        Categorie viandeCategorie = new Categorie("Les viandes",
+                "Pour connaître le temps de cuisson d’une viande saignante, bleue ou bien cuite."
+                , R.drawable.categorie_viandes);
         classiqueCategorie.setPlats(setUpClassiquePlat());
         dessertCategorie.setPlats(setUpDessert());
+        viandeCategorie.setPlats(setUpViandes());
         categories = new ArrayList<>(
                 asList(classiqueCategorie,
                         dessertCategorie,
@@ -47,9 +51,7 @@ public class DataBaseManager {
                         new Categorie("Les gratins",
                                 "Apprenez comment réaliser la cuisson parfaite d’un gratin en obtenant une texture dorée et croustillante."
                                 , R.drawable.categorie_gratin),
-                        new Categorie("Les viandes",
-                                "Pour connaître le temps de cuisson d’une viande saignante, bleue ou bien cuite."
-                                , R.drawable.categorie_viandes),
+                        viandeCategorie,
                         new Categorie("Les légumes et féculents",
                                 "Découvrez les techniques de cuissons des légumes et féculents au four, à l’eau, à la vapeur, à la poêle, etc..."
                                 , R.drawable.categorie_legumes),
@@ -194,6 +196,83 @@ public class DataBaseManager {
 
     }
 
+    public ArrayList<Plat> setUpViandes() {
+
+        Plat platRotiDePorc = new Plat("Rôti de porc",
+                "Une bonne cuisson pour le rôti de porc consiste à obtenir une viande à la fois tendre et juteuse. Retrouvez ici son temps de cuisson en cocotte.",
+                "<div><h1>Cuisson roti de porc à la cocotte</h1><p>Faites revenir dans un peu d’huile de cuisson votre roti sur chaque face pour les colorer. <strong>Couvrez et laissez cuire à feu doux pendant 1h30 environ soit 90 minutes</strong>. Vous pouvez ajouter avant de couvrir et après avoir baissé le feu, une tomate coupée en deux et un oignon émincé ce qui vous permettra de réaliser facilement un jus qui se mariera parfaitement avec votre viande et son accompagnement.</p></div>"
+                , R.drawable.plat_viande_roti_de_porc_en_cocotte_a_la_moutarde, 90);
+
+
+        Plat platBoeufBourguignon = new Plat("Boeuf bourguignon",
+                "L’une des viandes fondantes par excellence ! Une cuisson qui prend du temps, mais plus c’est long, plus c’est bon !",
+                "<div><h1>Boeuf bourguignon</h1><h2>La cuisson du boeuf bourguignon</h2><p>Le boeuf bourguignon est une délicieuse viande de boeuf cuisinée au vin rouge de Bourgogne, et accompagnée généralement de <a title=\"Champignons de Paris\" href=\"http://www.tempsdecuisson.net/les-legumes-et-feculents/champignons-de-paris\">champignons</a>, lardons, petits oignons, <a title=\"Carottes\" href=\"http://www.tempsdecuisson.net/les-legumes-et-feculents/carottes\">carottes</a> et parfois de pommes de terre.</p><p>Originaire de Bourgogne, comme son nom l’indique, le boeuf bourguignon est un plat typiquement dominical, dont le succès réside avant tout dans une cuisson bien maîtrisée.</p><p>Deux méthodes pour la cuisson du boeuf bourguignon.</p><h3>Cuisson au four</h3><p>Utiliser une cocotte en fonte que vous couvrirez pendant la cuisson.</p><p>Prévoyez environ <strong>3 h</strong> de cuisson à <strong>150°C</strong>.</p><p><em>N’oubliez pas de remuer régulièrement la viande dans son plat.</em></p><h3>A feu doux</h3><p>La cuisson à feu doux est une méthode plus traditionnelle.</p><p>Préférer la cocotte en fonte à l’autocuiseur pour une ce mode de cuisson doux et lent.</p><p>Prévoir <strong>2 h</strong>&nbsp;de cuisson tout en remuant la viande de temps en temps.</p></div>",
+                R.drawable.plat_viande_boeuf_bourguignon,
+                120);
+
+        Plat platPateSable
+                = new Plat("Poulet",
+                "Le poulet au four, un classique du repas du dimanche midi en famille ! Découvrez comment cuire votre poulet pour obtenir une viande moelleuse.",
+                "<div><h1>Poulet</h1><h2>Temps de cuisson du poulet</h2><p>&nbsp;</p><h3>Cuisson au four</h3><p>Placez votre <strong>poulet</strong> dans un plat prévu pour une cuisson au four.</p><p>Versez un verre d’eau dans le fond du plat et faîte cuire votre poulet à chaleur tournante à <strong>180°</strong>. Si votre four ne le permet pas, envisagez plutôt une cuisson traditionnelle à <strong>210°.</strong></p><p>Il faut en moyenne compter <strong>30 mn par 500g</strong>.</p><p>Pour un poulet entier de plus d’1 kilo, comptez au moins <strong>1 h à 1h15</strong> de cuisson.</p><p>Arrosez régulièrement le poulet avec son propre jus. Il est très important que le poulet soit au final bien cuit mais jamais sec avec une chair qui reste tendre.</p><h3>Cuisson au barbecue ou à la plancha</h3><p>Pour une cuisson du poulet au barbecue, quelques minutes de cuisson suffisent. C’est un mode de cuisson qui permet d’obtenir une viande bien grillée et croustillante, et de parfumer agréablement la chair.</p><p>Saisir rapidement les morceaux de poulet à feu vif, des deux côtés.</p><h3>Cuisson à la cocotte</h3><p><strong></strong>Pour réaliser un délicieux poulet braisé, rien de mieux qu’une cuisson à la cocotte.</p><p>Cette cuisson consiste à saisir&nbsp;brièvement&nbsp;le poulet dans un peu de matière grasse, puis à le faire cuire lentement dans une cocotte couverte, à feu doux, accompagné d’un peu de liquide et des légumes de votre choix. Vous pouvez également ajouter des herbes aromatiques qui parfumeront la chair du poulet : ail, fines herbes,&nbsp;échalotes…</p><p>Comptez environ une bonne heure de cuisson, jusqu’à ce que la chair soit tendre.</p><h3>Cuisson à la poêle</h3><p>Découpez le poulet en morceaux réguliers, idéalement en lanières.</p><p>Dans une grande poêle, ou un wok, faites revenir les morceaux accompagnés des légumes de votre choix et d’un peu de matière grasse à feu vif pendant <strong>15 à 20 mn</strong>.</p><h3>Le poulet poché</h3><p>Ce type de cuisson consiste à faire revenir les morceaux de poulet (farcis ou non) dans un liquide proche de l’ébullition.</p><p>C’est une cuisson très saine, qui permet d’obtenir une viande très tendre et parfumée.</p><p>Commencez par déposer votre poulet dans un liquide froid, idéalement un bouillon parfumé de fines herbes par exemple.</p><p>Faire chauffer le tout en veillant à ne jamais faire bouillir le liquide.</p><p>Comptez environ <strong>1h30</strong> de cuisson pour un poulet complet, et laissez doucement refroidir la viande dans son jus.</p><p><strong>Cuisson au micro-ondes</strong></p><p>Pour les plus&nbsp;pressés, sachez qu’il est possible de cuire le poulet au micro-ondes, en veillant toutefois à ne pas dépasser<strong>&nbsp;20mn</strong>&nbsp;de cuisson.</p><p>Par exemple, pour une moitié de poulet, comptez&nbsp;<strong>15 mn</strong>&nbsp;de cuisson à pleine puissance en retournant la viande une fois.</p></div>",
+                R.drawable.plat_viande_poulet, 20);
+
+
+        Plat rotiDeBoeufAuFour = new Plat("Roti de boeuf au four",
+                "Cuisson facile, idéale si on ne souhaite pas rester en cuisine pour surveiller sa viande !",
+                "<div><h1>Cuisson roti de boeuf au four</h1><p>Avant de&nbsp;démarrer la cuisson de votre rôti de boeuf au four, et c’est toujours le cas pour <a title=\"Les viandes\" href=\"http://www.tempsdecuisson.net/les-viandes\">les viandes</a>,&nbsp;<strong>votre rôti doit être conservé à température ambiante environ une heure avant sa préparation. &nbsp;</strong><em>Les temps de cuisson seront toujours plus fiables avec une nourriture à bonne température.</em></p><h2>Préparation de la viande :</h2><p>Déposé votre roti dans un plat à four et badigeonné-le d’huile de cuisson à l’aide d’un pinceau : huile de tournesol, huile d’olive, huile de pépin de raisin.</p><h2>Temps de cuisson pour un roti saignant :</h2><p>Pour obtenir une cuisson saignante qui est la cuisson recommandée pour un bon roti de boeuf, enfournez-le dans un four préchauffé <strong>à 240 degrés</strong> pendant 24 minutes. Il faudra penser à retourner votre roti à mi-cuisson soit 12 minutes sur chaque face. Si vous avez un four électrique, privilégiez un mode de cuisson statique plutôt que ventilé (chaleur tournante) qui pourrait dessécher la viande.</p><h2>Quel&nbsp;temps de cuisson pour un roti de boeuf au four&nbsp;:</h2><table><tbody><tr><td>Cuisson roti de boeuf 500 grammes saignant :</td><td>20 minutes (2 x 10)</td></tr><tr><td>24 minutes (2 x 12)</td><td>pour faire cuire un roti de 800 grammes;</td></tr><tr><td>26 minutes (2 x 13)</td><td>pour faire cuire un roti de 1 kilo;</td></tr><tr><td>30 minutes (2 x 15)</td><td>pour faire cuire un roti de 1,5 kilos;</td></tr><tr><td>40 minutes (2 x 20)</td><td>pour faire cuire un roti de 2 kilos.</td></tr></tbody></table><h2>Combien de temps cuire pour une cuisson moins saignante ?</h2><p>Pour un roti à point :</p><ul><li><strong>Cuisson roti de boeuf 500 grammes à point : 24 minutes (2 x 12)</strong></li><li>30 minutes (2 x 15) pour faire cuire un roti de 800 grammes;</li><li>34 minutes (2 x 17) pour faire cuire un roti de 1 kilo;</li><li>40 minutes (2 x 20) pour faire cuire un roti de 1,5 kilos;</li><li>50 minutes (2 x 25) pour faire cuire un roti de 2 kilos.</li></ul><p>Pour un roti bien cuit :</p><ul><li><strong>Cuisson roti de boeuf 500 grammes bien cuit : 30 minutes (2 x 15)</strong></li><li>36 minutes (2 x 18) pour faire cuire un roti de 800 grammes;</li><li>40 minutes (2 x 20) pour faire cuire un roti de 1 kilo;</li><li>50 minutes (2 x 25) pour faire cuire un roti de 1,5 kilos;</li><li>60 minutes (2 x 30) pour faire cuire un roti de 2 kilos.</li></ul><h2>Avant de servir</h2><p>Afin de déguster une viande bien tendre il est très important de laisser reposer votre roti après la cuisson en le couvrant d’aluminium pendant une dizaine de minutes avant de la découper et de la servir. Vous pouvez poser le roti sur une grille posée sur une assiette afin de récupérer un maximum de jus.</p><p>Pour obtenir du jus, déglacez votre plat de cuisson avec un petit verre d’eau en prenant bien soin de gratter avec une palette en bois. Mélanger la sauce obtenue avec le jus récupéré dans l’opération précédente.</p></div>",
+                R.drawable.plat_viande_roti_de_boeuf_au_four, 15);
+
+
+        Plat rotiDeBoeufAlaCocotte = new Plat("Roti de boeuf à la cocotte",
+                "Faire cuire un roti de boeuf à la cocotte est une très bonne idée car cela permet de servir une viande saignante et grillée.",
+                "<div><h1>Roti de boeuf à la cocotte</h1><p>Faire cuire un roti de boeuf à la cocotte est une très bonne idée car cela permet de servir une viande saignante et grillée. Pour y parvenir vous allez dans un premier temps saisir votre roti sur chaque face dans une cocotte très chaude dans laquelle vous aurez placé un peu d’huile de pépins de raisin ou à défaut de l’huile d’olive.</p><p><strong>Combien de temps ?</strong></p><p>Une fois bien coloré, couvrez votre roti et laissez cuire à feu moyen <strong>pendant 15 minutes environ pour un roti saignant, 20 minutes pour un roti à point et 25 minutes pour un roti bien cuit</strong>. Ces temps de cuisson sont valables pour un roti d’environ 1 kilo, à diminuer légèrement pour une pièce plus petite et inversement.</p><p><em>Comptez généralement 200 grammes par personne. </em></p><p>Pour assaisonner votre rôti de boeuf, vous pouvez le piquer avec&nbsp;<a title=\"Ail\" href=\"http://www.tempsdecuisson.net/dico/ail\">quelques petites gousses d’ail</a>&nbsp;en les insérant au coeur du rosbeef à l’aide d’une petite lame.<br>Pour l’accompagnement, des<a title=\"Haricots verts\" href=\"http://www.tempsdecuisson.net/les-legumes-et-feculents/haricots-verts\"> haricots verts</a> feront parfaitement l’affaire, tout comme des <a title=\"Pomme de terre\" href=\"http://www.tempsdecuisson.net/les-legumes-et-feculents/pomme-de-terre\">pommes de terres</a> sous n’importe quelle forme.</p></div>",
+                R.drawable.plat_viande_roti_de_boeuf_a_la_cocotte, 8);
+
+
+        Plat steakHache = new Plat("Steak haché",
+                "Le steak haché c’est pour les petits et les grands !",
+                "<div><h1>Steak haché</h1><p><strong>La cuisson du steak haché frais</strong> n’est pas particulièrement technique mais il est toujours important de les cuire à cœur et d’éviter de les manger trop saignant.</p><p>Ainsi on privilégiera toujours une cuisson sur un grill à viande à feu vif ou dans une poêle anti-adhésive (en évitant le <a href=\"http://www.tempsdecuisson.net/les-viandes/magret-de-canard/cuisson-au-barbecue\">barbecue</a>) sans graisse, car cela permettra de bien croûter le steak puis de l’attendrir sur un feu plus doux.</p><p>Trois minutes par face à feu moyen suffiront donc pour terminer la cuisson. (5 pour les steaks hachés surgelés.) Comme pour <a href=\"http://www.tempsdecuisson.net/les-viandes\">les autres viandes rouges</a>, n’hésitez pas à <em>laisser reposer quelques minutes à couvert avant de servir.</em></p><h2>La cuisson du steak haché frais* en détail :</h2><dl><dt>Cuisson saignante</dt><dd>1 minute par face.</dd><dt>Cuisson à point</dt><dd>2 minutes par face.</dd><dt>Cuisson à coeur, bien cuit.</dt><dd>3 minutes par face.</dd></dl><p>*frais = non surgelés (hachés par votre boucher ou conditionnés sous vide)</p></div>"
+                ,
+                R.drawable.plat_viande_steak_hache, 2);
+
+
+        Plat canard = new Plat("Canard",
+                "Avec le bon temps de cuisson du canard au four, réalisez de nombreuses recettes pour le réveillon !",
+                "<div><h1>Canard</h1><h2>Temps de cuisson du canard</h2><p>Très apprécié sur les tables de Noël, le canard est une viande exquise qui permet de nombreuses recettes toute aussi délicieuses les unes que les autres !</p><h3>Cuisson au four</h3><p>Cuire un canard au four est simple, veillez toutefois à bien respecter les temps de cuisson afin de ne pas&nbsp;dessécher&nbsp;la viande.</p><p>Commencez par préchauffer votre four 15 à 20mn à<strong> 220°C</strong> (thermostat 6).</p><p>Placez la volaille dans un plat, accompagnez-la des ingrédients de votre choix <em>(<a title=\"Romarin\" href=\"http://www.tempsdecuisson.net/dico/romarin\">romarin</a>, herbes de Provence…)</em>, ajoutez l’équivalent d’un verre d’eau dans le fond puis enfournez le tout pendant <strong>50 mn</strong>.</p><p><strong>A partir de cette cuisson, vous pouvez réaliser de nombreuses recettes de canard rôti au four :</strong></p><ul><li>Canard rôti à l’orange (avec des zestes d’orange)</li><li>Canard rôti au citron (avec des zestes de citron)</li><li>Canard rôti au cognac (accompagné de quelques cuillères de bon cognac !)</li><li>Canard rôti à la mode&nbsp;provençale&nbsp;(en l’accompagnant d’olives)</li></ul><p><em><em>La viande de canard&nbsp;s’accommode&nbsp;très bien avec le sucré, n’hésitez pas à l’accompagner de fruits.</em></em></p><p><em><em></em>Bon appétit !</em></p></div>",
+                R.drawable.plat_viande_canard_au_four, 3);
+
+
+        Plat rosbeef = new Plat("Rosbeef",
+                "Quel est le temps et la meilleure méthode de cuisson d’un rosbeef ?",
+                "<div><h1>Cuisson rosbeef</h1><h2>Réussir la cuisson d’un rosbeef</h2><p>Le rosbeef doit être consommé saignant, sinon il devient sec et difficile à apprécier à sa juste valeur, d’autant moins avec un rosbeef de qualité que vous paierez facilement 25 euros le kilo chez votre boucher. Aussi, évitez de préparer un rosbeef si vous n’êtes pas entourés d’amateur de viande rouge. Par ailleurs, pour être certain de réussir votre cuisson, ne perdez pas de vu que le temps de cuisson de votre rosbeef dépend également de sa température. Vous pouvez donc le sortir du réfrigérateur avant de le préparer, il n’en sera que meilleur. <strong>1 heure au moins.</strong></p><blockquote><p>à retenir : Le rosbeef doit être servi saignant<br>et préparé à température ambiante</p></blockquote><h2>Meilleur technique de cuisson</h2><p>Pour obtenir une viande tendre et cuite à coeur, <strong>vous privilégierez toujours la cuisson du rosbeef au four</strong>. A&nbsp;haute température et si possible dans un four à chaleur tournante qui permet&nbsp;d’obtenir une cuisson plus homogène de votre rosbeef.</p><p>Cela étant, puisque la cuisson n’est jamais très longue, il peut être intéressant de démarrer la cuisson du rosbeef sur le feu, dans une poêle ou un caquelon adapté, et à feu très vif. L’intérêt d’une telle pré-cuisson sera d’obtenir un «&nbsp;croutage&nbsp;» rapide du rosbeef qui lui permettra de mieux tenir à la cuisson au four mais également de le colorer. Pour ce faire, on utilisera une huile adaptée que de l’huile de pépin de raison. Relativement neutre en bouche et qui tient bien la cuisson. Les plus gourmands pourront la mélanger avec une noix de beurre…</p><h2>Quel temps de cuisson ?</h2><p>Une fois doré sur chaque face, le rosbeef pourra alors être enfournée dans un four bien chaud (autour de 250°C, thermostat 8) pour<strong> une durée de 10 minutes maximum&nbsp;pour un rosbeef de 500 grammes</strong>. 5&nbsp;minutes&nbsp;de plus soit un quart d’heure au total pour un rosbeef&nbsp;de<strong> 1kg (15 minutes).</strong> Vous pouvez ensuite ajouter 1 minutes pour 100 grammes supplémentaires <strong>(environ 20 minutes pour un rosbeef de 1,5kg)</strong>.</p><h2>10 minutes maximum pour un rosbeef de 500 grammes.</h2><p>Une fois la cuisson terminée, pensez bien à emballer votre rosbeef dans du papier d’aluminium pendant une dizaine de minutes, il n’en sera que plus savoureux !</p><p>Bonne dégustation.</p><p>&nbsp;</p></div>",
+                R.drawable.plat_viande_rosbeef, 20);
+
+
+        Plat piece_a_fondue = new Plat("Pièce à fondue",
+                "La pièce à fondue est un morceau de boeuf très tendre et très maigre généralement coupé dans le rumsteak (partie arrière/haute du boeuf) que vous trouverez sans problème dans votre supermarché habituel ou chez le boucher.",
+                "<div><h1>Pièce à fondue</h1><p><strong>La pièce à fondue</strong> est un morceau de boeuf très tendre et très maigre généralement coupé dans le&nbsp;rumsteak (partie arrière/haute du boeuf) que vous trouverez&nbsp;sans problème&nbsp;dans votre supermarché habituel ou chez le boucher. Vendue autour de 20 euros le kilo,&nbsp;elle est évidemment tout indiquée pour la fondue bourguignonne, préalablement&nbsp;découpée en dés.</p><p>Mais avec des qualités gustatives proche du <a href=\"https://www.tempsdecuisson.net/les-viandes/filet-de-boeuf\">filet</a> vous pouvez tout à fait à adopter une autre méthode de cuisson pour votre pièce à fondue généralement calibrée autour de 400 grammes.</p><ul><li>Par exemple cuite comme<a href=\"https://www.tempsdecuisson.net/les-viandes/roti-de-boeuf/cuisson-a-la-cocotte\"> un roti en cocotte</a> : 5 à 6 minutes par face pas plus.</li><li>Préparée en tartare de boeuf.</li><li>Juste saisi&nbsp;en lamelle par exemple façon boeuf teriyaki.</li></ul><p>Bon appétit !</p></div>",
+                R.drawable.plat_viande_piece_a_fondue, 120);
+
+
+        Plat tournedos = new Plat("Tournedos",
+                "Cuire un tournedos ? Rien de plus simple, un aller retour sur la poêle pour les amateur de viande saignante, quelques minutes de plus pour les autres.",
+                "<div><h1>Tournedos</h1><h2>Temps de cuisson des tournedos</h2><p style=\"text-align: justify;\">Pour cuire vos tournedos, commencer par chauffer votre poêle avec une noix matière grasses. Pour une cuisson saignante, faites revenir vos tournedos <strong>4 minutes</strong> de chaque côté. Compter <strong>2 minutes</strong> pour une cuisson bleue et entre <strong>7 et 8 minutes</strong> pour une viande «&nbsp;à point.&nbsp;»</p></div>",
+                R.drawable.plat_viande_tournedos, 8);
+
+        Plat filetMignonAgneau = new Plat("Filet mignon d’agneau",
+                "Découvrez nos conseils et astuces pour réaliser un filet mignon d’agneau parfait.",
+                "<div><h1>Filet mignon d’agneau</h1><h2>Le temps de cuisson du filet mignon d’agneau</h2><p>Le filet d’agneau est une viande composée de deux parties qui se trouvent de part et d’autre de l’échine, dans la région lombaire de l’agneau. Riche en protéine, mais aussi en zinc et en vitamines B, c’est une viande appréciée en toute saison, dont la&nbsp;saveur délicate fait d’elle une viande festive que l’on sert notamment à Pâques.</p><p>Le filet d’agneau est une viande savoureuse dont la cuisson doit respecter la tendresse, découvrez comment procéder selon le mode de cuisson choisi.</p><h3>Cuisson au four</h3><p>Le temps de cuisson du filet mignon d’agneau au four est proportionnel à son poids.</p><p>Comptez <strong>25mn</strong> de cuisson <strong>par kilo</strong> de viande.</p><p>Enfournez le filet d’agneau à <strong>200°C, </strong>assaisonné de thym et de romarin par exemple.</p><h3>Cuisson à la poêle</h3><p>Le filet mignon d’agneau poêlé est un délice !</p><p>Faites revenir votre viande dans une poêle pendant <strong>30 à 35 mn</strong>, accompagnée d’une noisette de beurre ou d’un filet d’huile d’olive.</p><p>Vous pouvez en profiter pour faire revenir toute sorte de légumes avec votre viande, comme des carottes par exemple.</p><p><em>Le jus de cuisson peut être utilisé pour réaliser une sauce.</em></p></div>",
+                R.drawable.plat_viande_filet_agneau_au_four, 25);
+
+        return new ArrayList<>(asList(
+                platPateSable, rotiDeBoeufAuFour, rotiDeBoeufAlaCocotte,
+                filetMignonAgneau,
+                steakHache, canard, rosbeef, piece_a_fondue, tournedos
+        ));
+
+    }
+
+
     public ArrayList<Plat> setUpDessert() {
 
         Plat platCremeBrulee = new Plat("Crème brûlée",
@@ -278,13 +357,13 @@ public class DataBaseManager {
 
         Plat platdesserttarteauPommes = new Plat("Tarte aux pommes",
                 "La cuisson de la tarte aux pommes doit être maîtrisée pour obtenir une pâte croquante et des pommes bien dorées. Découvrez le temps de cuisson de ce dessert toujours autant apprécié.",
-                        "<div><h1>Tarte aux pommes</h1><h2>Temps de cuisson de la tarte aux pommes</h2><p>Après avoir préparé votre tarte aux pommes, enfournez-la <strong>30 à 40 mn</strong> dans un four préchauffé <strong>à 180 degrés</strong>.</p><p><em>Pour bien faire dorer vos pommes, ajoutez quelques morceaux de beurre dessus !</em></p></div>",
+                "<div><h1>Tarte aux pommes</h1><h2>Temps de cuisson de la tarte aux pommes</h2><p>Après avoir préparé votre tarte aux pommes, enfournez-la <strong>30 à 40 mn</strong> dans un four préchauffé <strong>à 180 degrés</strong>.</p><p><em>Pour bien faire dorer vos pommes, ajoutez quelques morceaux de beurre dessus !</em></p></div>",
                 R.drawable.plat_dessert_tarte_aux_pommes, 8);
 
 
         Plat platdessertCremeAuCaramel = new Plat("Crème au caramel",
                 "Un dessert simple et enfantin qui requiert une cuisson bien précise ! Découvrez ici comment cuire parfaitement vos crèmes au caramel.",
-                        "<div><h1>Crème au caramel</h1><h2>Temps de cuisson de la crème au caramel</h2>" +
+                "<div><h1>Crème au caramel</h1><h2>Temps de cuisson de la crème au caramel</h2>" +
                         "<p>Pendant la préparation de vos crèmes au caramel, préchauffez votre four à <strong>150°C.</strong></p><p><strong></strong>Déposez dedans un plat à moitié rempli d’eau et assez large pour contenir tous vos ramequins.</p><p>Une fois votre préparation terminée et vos ramequins remplis, disposez-les dans le plat et laissez-les cuire au bain-marie pendant<strong> 20 mn.</strong></p><p><em>Après la cuisson placez vos crèmes au caramel au frais pendant quelques heures… Bon appétit !</em></p></div>",
                 R.drawable.plat_dessert_creme_au_caramel, 8);
 
@@ -317,5 +396,4 @@ public class DataBaseManager {
         ));
 
     }
-
 }
