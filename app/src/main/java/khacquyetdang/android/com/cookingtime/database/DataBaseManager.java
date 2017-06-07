@@ -452,4 +452,161 @@ public class DataBaseManager {
         ));
 
     }
+
+    public ArrayList<Plat> setupPoissonFruitDeMers() {
+
+        Plat langoustine = new Plat("Langoustine",
+                "Découvrez ici la meilleure méthode pour faire cuire vos langoustines en moins de dix minutes.",
+                "<div><h1>Gratin dauphinois</h1><h2 style=\"text-align: justify;\">Temps de cuisson du gratin dauphinois</h2><p style=\"text-align: justify;\">Le gratin dauphinois est l’une des recettes traditionnelles phares de la région lyonnaise. Pour garder un aspect doré sur le dessus et obtenir des tranches de pommes de terre moelleuse, <strong>la cuisson du gratin</strong> dauphinois sera primordiale.</p><p style=\"text-align: justify;\">Dans votre plat à gratin, disposez les pommes de terres en tranches puis versez avec du lait. Mettez votre plat au <strong>four thermostat 6</strong> (180°C) pendant <strong>45 minutes à 1 heure</strong>. Selon la quantité de pommes de terre et la taille de votre gratin, la cuisson pourra être plus longue pour garantir son côté moelleux.</p><p style=\"text-align: justify;\">Attention, si le haut de votre gratin dauphinois dore trop, n’hésitez pas à le couvrir d’une feuille d’aluminium pendant la fin de la cuisson.</p></div>"
+                , R.drawable.plat_gratin_dauphinois, 45);
+
+
+        Plat coquilleSaintJaques = new Plat("Coquilles Saint-jacques",
+                "La coquille Saint-Jacques est l’un des mets les plus délicats et les plus raffinés de la mer. Attention à la cuisson !",
+                "<div><h1>Crème anglaise</h1><h2>Temps de cuisson d’une crème anglaise</h2>" +
+                        "<p style=\"text-align: justify;\">" +
+                        "Placez la casserole sur un feu moyen sans cesser de remuer le mélange à l’aide d’une cuillère en bois. La cuisson doit atteindre très précisément la température de <strong>85°C</strong>, mais pas plus, sinon elle sera trop épaisse et des grumeaux commenceront à se former.</p><p style=\"text - align:justify; \">Si vous ne disposez pas d’un thermomètre pour contrôler la température, comptez <strong>entre 2 et 3 minutes de cuisson</strong> pour 350 grammes de crème anglaise. La crème doit épaissir légèrement et devenir plus claire.</p><p style=\"text - align:justify;\">Pour vérifier la cuisson, vous pouvez passer votre doigt sur le dos de la spatule en bois nappée de crème : si la trace reste visible et que la crème ne coule pas dans le sillon que vous avez tracé, la crème est prête.</p></div>",
+                R.drawable.plat_gratin_pate,
+                15);
+
+        Plat moules
+                = new Plat("Moules",
+                "La réussite d’un délicieux gratin de courgettes dépend en partie de sa cuisson. Découvrez comment réaliser ce plat facile et idéal en toutes saisons.",
+                "<div><h1>Gratin de courgettes</h1><h2>Temps de cuisson du gratin de courgettes</h2><p>Pour réussir un gratin savoureux et croquant, il est primordial de bien faire dégorger les courgettes.</p><p>Pour cela, coupez-les en rondelles épaisses et plongez-les dans une casserole d’eau bouillante pendant<strong> 15 mn.</strong></p><p>Après les avoir bien égouttées, disposez vos courgettes dans un plat à gratin, rajoutez votre liant et saupoudrez le tout de fromage. Pour finir, placez votre plat au four pendant 45 mn, en actionnant le mode «&nbsp;grill&nbsp;» durant&nbsp;<strong>les 5 dernières minutes.</strong></p><p><em>Savez-vous qu’il est possible de réaliser rapidement un petit gratin de courgettes au micro-ondes ?</em></p><p>Placez vos rondelles de courgettes dans un récipient rempli d’eau salé, et laissez-les cuire pendant <strong> 6mn</strong> à pleine puissance. Disposez-les ensuite dans un petit plat à gratin, ajoutez votre liant et du fromage, puis faîtes cuire le tout pendant <strong> 6mn !</strong></p></div>",
+                R.drawable.plat_gratin_courgette, 60);
+
+
+        Plat homard = new Plat("Homard",
+                "C’est le crustacé dont la cuisson est redouté car il faut le préparer vivant. Retrouvez ici son temps de cuisson idéal selon son poids.",
+                "<div><h1>Gratin de courge</h1><h2>Temps de cuisson du gratin de courge</h2><p>La courge, aliment incontournable de l’hiver, se déguste de nombreuses façons : soupe, soufflé, purée… Sans oublier l’incontournable gratin, qui apporte plus de consistance et de croquant au légume. La cuisson de ce plat d’automne requiert toutefois une attention toute particulière afin de conserver la chair de la courge tendre et juteuse.</p><p>Commencez par préparer vos courges et votre liant, puis placez le tout dans un plat à gratin.</p><p>Saupoudrez généreusement votre préparation de gruyère râpé.</p><p>Ensuite, enfournez votre gratin et laissez-le cuire pendant <strong>30 mn</strong> à 200°C.</p><p>Pour un gratin bien croquant, activez le grill de votre four pendant les 5 dernières minutes de cuisson.</p><p><em>Pour relever le gout des courges, râpez un peu de <a title=\"Noix de muscade\" href=\"http://www.tempsdecuisson.net/dico/noix-de-muscade\">noix de muscade</a> dessus !</em></p></div>",
+                R.drawable.plat_gratin_courge, 30);
+
+
+        Plat truite = new Plat("Truite",
+                "La truite demande une cuisson précise et délicate. Découvrez ici son temps de cuisson idéal pour une préparation au four en papillote ou à la poêle.",
+                "<div><h1>Gratin d’endives</h1><h2>Temps de cuisson du gratin d’endives</h2><p>Généralement réalisé avec du jambon et une sauce béchamel, le gratin d’endives&nbsp;s’accommode tout aussi bien avec d’autres aliments, comme le bleu d’Auvergne, le bacon ou bien le saumon.</p><p>Du classique gratin d’endives jambon béchamel, aux gratins d’endives les plus originaux, la cuisson de ce plat doit être parfaitement maîtrisé afin de conserver la bonne tenue des endives tout en gratinant parfaitement le dessus.</p><p>Voici la marche à suivre :</p><p>Commencez par faire cuire vos endives à la vapeur pendant <strong>10 mn.</strong><br>Veillez bien à ne pas dépasser 15mn de cuisson sous peine d’obtenir des endives trop molles par la suite.<br>Pendant ce temps là préchauffez votre four en position grill.<br>Laissez refroidir quelques instants les endives, puis déposez-les dans un plat à gratin.<br>Rajoutez les ingrédients de votre choix (sauce béchamel, gruyères, jambon, etc…), et enfournez le tout pendant <strong>10mn</strong> jusqu’à obtenir une texture craquante et dorée.</p><p><em>Bon appétit !</em></p></div>",
+                R.drawable.plat_gratin_endive, 10);
+
+
+        Plat courtbouillon = new Plat("Poisson au court-bouillon",
+                "Attention à ne pas noyer le poisson ! La cuisson au court-bouillon est recommandée pour conserver toutes les saveurs du poisson.",
+                "<div><h1>Gratin d’aubergines</h1><h2>Temps de cuisson du gratin d’aubergines</h2><p>L<a title=\"Aubergine\" href=\"http://www.tempsdecuisson.net/les-legumes-et-feculents/aubergine\">‘aubergine</a>, légume composé à plus de 90% d’eau et riche de nombreux vitamines et minéraux, doit être cuite avec précaution pour conserver sa bonne tenue ainsi que ses bienfaits.</p><p>Commencez par éplucher les aubergines, puis découpez-les en rondelles.</p><p>Idéalement, saupoudrez les rondelles de sel puis faites-les dégorger pendant 1 heure; ce qui vous permettra d’obtenir un gratin qui ne rendra pas trop de jus.</p><p>Faites revenir les aubergines légèrement huilées dans une grande poêle, à feu moyen pendant <strong>10 mn</strong>.</p><p>Pour finir, disposez les aubergines accompagnées des aliments de votre choix (coulis de tomates, viande…), déposez une fine couche de gruyère sur le dessus puis enfournez votre gratin <strong>20 mn</strong> à 200°C.</p><p><em>Bon appétit !</em></p></div>"
+                ,
+                R.drawable.plat_gratin_aubergine, 30);
+
+
+        Plat huitresgratinees = new Plat("Huitres gratinées",
+                "Parce que les huitres ne se mangent pas seulement crues, vous pouvez également les faire gratiner au four.",
+                "<div><h1>Gratin d’aubergines</h1><h2>Temps de cuisson du gratin d’aubergines</h2><p>L<a title=\"Aubergine\" href=\"http://www.tempsdecuisson.net/les-legumes-et-feculents/aubergine\">‘aubergine</a>, légume composé à plus de 90% d’eau et riche de nombreux vitamines et minéraux, doit être cuite avec précaution pour conserver sa bonne tenue ainsi que ses bienfaits.</p><p>Commencez par éplucher les aubergines, puis découpez-les en rondelles.</p><p>Idéalement, saupoudrez les rondelles de sel puis faites-les dégorger pendant 1 heure; ce qui vous permettra d’obtenir un gratin qui ne rendra pas trop de jus.</p><p>Faites revenir les aubergines légèrement huilées dans une grande poêle, à feu moyen pendant <strong>10 mn</strong>.</p><p>Pour finir, disposez les aubergines accompagnées des aliments de votre choix (coulis de tomates, viande…), déposez une fine couche de gruyère sur le dessus puis enfournez votre gratin <strong>20 mn</strong> à 200°C.</p><p><em>Bon appétit !</em></p></div>"
+                ,
+                R.drawable.plat_gratin_aubergine, 30);
+
+
+        Plat crabe = new Plat("CRABE",
+                "Comme le homard, le crabe se cuit vivant. Découvrez ici son temps de cuisson qui peut varier en fonction de la taille du crustacé.",
+                "<div><h1>Gratin d’aubergines</h1><h2>Temps de cuisson du gratin d’aubergines</h2><p>L<a title=\"Aubergine\" href=\"http://www.tempsdecuisson.net/les-legumes-et-feculents/aubergine\">‘aubergine</a>, légume composé à plus de 90% d’eau et riche de nombreux vitamines et minéraux, doit être cuite avec précaution pour conserver sa bonne tenue ainsi que ses bienfaits.</p><p>Commencez par éplucher les aubergines, puis découpez-les en rondelles.</p><p>Idéalement, saupoudrez les rondelles de sel puis faites-les dégorger pendant 1 heure; ce qui vous permettra d’obtenir un gratin qui ne rendra pas trop de jus.</p><p>Faites revenir les aubergines légèrement huilées dans une grande poêle, à feu moyen pendant <strong>10 mn</strong>.</p><p>Pour finir, disposez les aubergines accompagnées des aliments de votre choix (coulis de tomates, viande…), déposez une fine couche de gruyère sur le dessus puis enfournez votre gratin <strong>20 mn</strong> à 200°C.</p><p><em>Bon appétit !</em></p></div>"
+                ,
+                R.drawable.plat_gratin_aubergine, 30);
+
+
+        Plat bulots = new Plat("Bulots",
+                "Découvrez la cuisson subtile des bulots et apprennez à conservez leur chair tendre et savoureuse.",
+                "<div><h1>Gratin d’aubergines</h1><h2>Temps de cuisson du gratin d’aubergines</h2><p>L<a title=\"Aubergine\" href=\"http://www.tempsdecuisson.net/les-legumes-et-feculents/aubergine\">‘aubergine</a>, légume composé à plus de 90% d’eau et riche de nombreux vitamines et minéraux, doit être cuite avec précaution pour conserver sa bonne tenue ainsi que ses bienfaits.</p><p>Commencez par éplucher les aubergines, puis découpez-les en rondelles.</p><p>Idéalement, saupoudrez les rondelles de sel puis faites-les dégorger pendant 1 heure; ce qui vous permettra d’obtenir un gratin qui ne rendra pas trop de jus.</p><p>Faites revenir les aubergines légèrement huilées dans une grande poêle, à feu moyen pendant <strong>10 mn</strong>.</p><p>Pour finir, disposez les aubergines accompagnées des aliments de votre choix (coulis de tomates, viande…), déposez une fine couche de gruyère sur le dessus puis enfournez votre gratin <strong>20 mn</strong> à 200°C.</p><p><em>Bon appétit !</em></p></div>"
+                ,
+                R.drawable.plat_gratin_aubergine, 30);
+
+        Plat tourteaux = new Plat("Tourteaux",
+                "Découvrez comment cuire les célèbres « crabes dormeurs », afin de conserver leurs chairs tendres et fraîches et réaliser de nombreuses recettes savoureuses.",
+                "<div><h1>Gratin d’aubergines</h1><h2>Temps de cuisson du gratin d’aubergines</h2><p>L<a title=\"Aubergine\" href=\"http://www.tempsdecuisson.net/les-legumes-et-feculents/aubergine\">‘aubergine</a>, légume composé à plus de 90% d’eau et riche de nombreux vitamines et minéraux, doit être cuite avec précaution pour conserver sa bonne tenue ainsi que ses bienfaits.</p><p>Commencez par éplucher les aubergines, puis découpez-les en rondelles.</p><p>Idéalement, saupoudrez les rondelles de sel puis faites-les dégorger pendant 1 heure; ce qui vous permettra d’obtenir un gratin qui ne rendra pas trop de jus.</p><p>Faites revenir les aubergines légèrement huilées dans une grande poêle, à feu moyen pendant <strong>10 mn</strong>.</p><p>Pour finir, disposez les aubergines accompagnées des aliments de votre choix (coulis de tomates, viande…), déposez une fine couche de gruyère sur le dessus puis enfournez votre gratin <strong>20 mn</strong> à 200°C.</p><p><em>Bon appétit !</em></p></div>"
+                ,
+                R.drawable.plat_gratin_aubergine, 30);
+
+
+        Plat barGrille = new Plat("Bar grillé",
+                "Maîtrisez la cuisson du bar au four et surprenez vos convives !",
+                "<div><h1>Gratin d’aubergines</h1><h2>Temps de cuisson du gratin d’aubergines</h2><p>L<a title=\"Aubergine\" href=\"http://www.tempsdecuisson.net/les-legumes-et-feculents/aubergine\">‘aubergine</a>, légume composé à plus de 90% d’eau et riche de nombreux vitamines et minéraux, doit être cuite avec précaution pour conserver sa bonne tenue ainsi que ses bienfaits.</p><p>Commencez par éplucher les aubergines, puis découpez-les en rondelles.</p><p>Idéalement, saupoudrez les rondelles de sel puis faites-les dégorger pendant 1 heure; ce qui vous permettra d’obtenir un gratin qui ne rendra pas trop de jus.</p><p>Faites revenir les aubergines légèrement huilées dans une grande poêle, à feu moyen pendant <strong>10 mn</strong>.</p><p>Pour finir, disposez les aubergines accompagnées des aliments de votre choix (coulis de tomates, viande…), déposez une fine couche de gruyère sur le dessus puis enfournez votre gratin <strong>20 mn</strong> à 200°C.</p><p><em>Bon appétit !</em></p></div>"
+                ,
+                R.drawable.plat_gratin_aubergine, 30);
+
+
+        Plat saumon = new Plat("Saumon",
+                "La cuisson du saumon en papillote permet de réaliser de nombreuses recettes de Noël faciles !",
+                "<div><h1>Gratin d’aubergines</h1><h2>Temps de cuisson du gratin d’aubergines</h2><p>L<a title=\"Aubergine\" href=\"http://www.tempsdecuisson.net/les-legumes-et-feculents/aubergine\">‘aubergine</a>, légume composé à plus de 90% d’eau et riche de nombreux vitamines et minéraux, doit être cuite avec précaution pour conserver sa bonne tenue ainsi que ses bienfaits.</p><p>Commencez par éplucher les aubergines, puis découpez-les en rondelles.</p><p>Idéalement, saupoudrez les rondelles de sel puis faites-les dégorger pendant 1 heure; ce qui vous permettra d’obtenir un gratin qui ne rendra pas trop de jus.</p><p>Faites revenir les aubergines légèrement huilées dans une grande poêle, à feu moyen pendant <strong>10 mn</strong>.</p><p>Pour finir, disposez les aubergines accompagnées des aliments de votre choix (coulis de tomates, viande…), déposez une fine couche de gruyère sur le dessus puis enfournez votre gratin <strong>20 mn</strong> à 200°C.</p><p><em>Bon appétit !</em></p></div>"
+                ,
+                R.drawable.plat_gratin_aubergine, 30);
+
+
+        Plat crevettes = new Plat("Crevettes",
+                "Découvrez combien de temps dure la cuisson brève des crevettes, et réalisez toutes sortes de plats à base de ce délicieux petit crustacé !",
+                "<div><h1>Gratin d’aubergines</h1><h2>Temps de cuisson du gratin d’aubergines</h2><p>L<a title=\"Aubergine\" href=\"http://www.tempsdecuisson.net/les-legumes-et-feculents/aubergine\">‘aubergine</a>, légume composé à plus de 90% d’eau et riche de nombreux vitamines et minéraux, doit être cuite avec précaution pour conserver sa bonne tenue ainsi que ses bienfaits.</p><p>Commencez par éplucher les aubergines, puis découpez-les en rondelles.</p><p>Idéalement, saupoudrez les rondelles de sel puis faites-les dégorger pendant 1 heure; ce qui vous permettra d’obtenir un gratin qui ne rendra pas trop de jus.</p><p>Faites revenir les aubergines légèrement huilées dans une grande poêle, à feu moyen pendant <strong>10 mn</strong>.</p><p>Pour finir, disposez les aubergines accompagnées des aliments de votre choix (coulis de tomates, viande…), déposez une fine couche de gruyère sur le dessus puis enfournez votre gratin <strong>20 mn</strong> à 200°C.</p><p><em>Bon appétit !</em></p></div>"
+                ,
+                R.drawable.plat_gratin_aubergine, 30);
+
+
+        Plat lotte = new Plat("Lotte",
+                "Découvrez les différents mode et temps de cuisson de la lotte, un poisson à la chair tendre mais fragile.",
+                "<div><h1>Gratin d’aubergines</h1><h2>Temps de cuisson du gratin d’aubergines</h2><p>L<a title=\"Aubergine\" href=\"http://www.tempsdecuisson.net/les-legumes-et-feculents/aubergine\">‘aubergine</a>, légume composé à plus de 90% d’eau et riche de nombreux vitamines et minéraux, doit être cuite avec précaution pour conserver sa bonne tenue ainsi que ses bienfaits.</p><p>Commencez par éplucher les aubergines, puis découpez-les en rondelles.</p><p>Idéalement, saupoudrez les rondelles de sel puis faites-les dégorger pendant 1 heure; ce qui vous permettra d’obtenir un gratin qui ne rendra pas trop de jus.</p><p>Faites revenir les aubergines légèrement huilées dans une grande poêle, à feu moyen pendant <strong>10 mn</strong>.</p><p>Pour finir, disposez les aubergines accompagnées des aliments de votre choix (coulis de tomates, viande…), déposez une fine couche de gruyère sur le dessus puis enfournez votre gratin <strong>20 mn</strong> à 200°C.</p><p><em>Bon appétit !</em></p></div>"
+                ,
+                R.drawable.plat_gratin_aubergine, 30);
+
+        Plat cabillaud = new Plat("Cabillaud",
+                "Découvrez les différents temps de cuisson du cabillaud, un poisson à la saveur subtile",
+                "<div><h1>Gratin d’aubergines</h1><h2>Temps de cuisson du gratin d’aubergines</h2><p>L<a title=\"Aubergine\" href=\"http://www.tempsdecuisson.net/les-legumes-et-feculents/aubergine\">‘aubergine</a>, légume composé à plus de 90% d’eau et riche de nombreux vitamines et minéraux, doit être cuite avec précaution pour conserver sa bonne tenue ainsi que ses bienfaits.</p><p>Commencez par éplucher les aubergines, puis découpez-les en rondelles.</p><p>Idéalement, saupoudrez les rondelles de sel puis faites-les dégorger pendant 1 heure; ce qui vous permettra d’obtenir un gratin qui ne rendra pas trop de jus.</p><p>Faites revenir les aubergines légèrement huilées dans une grande poêle, à feu moyen pendant <strong>10 mn</strong>.</p><p>Pour finir, disposez les aubergines accompagnées des aliments de votre choix (coulis de tomates, viande…), déposez une fine couche de gruyère sur le dessus puis enfournez votre gratin <strong>20 mn</strong> à 200°C.</p><p><em>Bon appétit !</em></p></div>"
+                ,
+                R.drawable.plat_gratin_aubergine, 30);
+
+
+        Plat lieu = new Plat("Lieu",
+                "Apprenez à cuire le lieu, poisson savoureux et riche en minéraux, de façon à obtenir une chair tendre tout en conservant ses bienfaits.",
+                "<div><h1>Gratin d’aubergines</h1><h2>Temps de cuisson du gratin d’aubergines</h2><p>L<a title=\"Aubergine\" href=\"http://www.tempsdecuisson.net/les-legumes-et-feculents/aubergine\">‘aubergine</a>, légume composé à plus de 90% d’eau et riche de nombreux vitamines et minéraux, doit être cuite avec précaution pour conserver sa bonne tenue ainsi que ses bienfaits.</p><p>Commencez par éplucher les aubergines, puis découpez-les en rondelles.</p><p>Idéalement, saupoudrez les rondelles de sel puis faites-les dégorger pendant 1 heure; ce qui vous permettra d’obtenir un gratin qui ne rendra pas trop de jus.</p><p>Faites revenir les aubergines légèrement huilées dans une grande poêle, à feu moyen pendant <strong>10 mn</strong>.</p><p>Pour finir, disposez les aubergines accompagnées des aliments de votre choix (coulis de tomates, viande…), déposez une fine couche de gruyère sur le dessus puis enfournez votre gratin <strong>20 mn</strong> à 200°C.</p><p><em>Bon appétit !</em></p></div>"
+                ,
+                R.drawable.plat_gratin_aubergine, 30);
+
+
+        Plat colin = new Plat("Colin",
+                "Découvrez les temps de cuisson du colin, un poisson à la chair dénué d’arrêtes.",
+                "<div><h1>Gratin d’aubergines</h1><h2>Temps de cuisson du gratin d’aubergines</h2><p>L<a title=\"Aubergine\" href=\"http://www.tempsdecuisson.net/les-legumes-et-feculents/aubergine\">‘aubergine</a>, légume composé à plus de 90% d’eau et riche de nombreux vitamines et minéraux, doit être cuite avec précaution pour conserver sa bonne tenue ainsi que ses bienfaits.</p><p>Commencez par éplucher les aubergines, puis découpez-les en rondelles.</p><p>Idéalement, saupoudrez les rondelles de sel puis faites-les dégorger pendant 1 heure; ce qui vous permettra d’obtenir un gratin qui ne rendra pas trop de jus.</p><p>Faites revenir les aubergines légèrement huilées dans une grande poêle, à feu moyen pendant <strong>10 mn</strong>.</p><p>Pour finir, disposez les aubergines accompagnées des aliments de votre choix (coulis de tomates, viande…), déposez une fine couche de gruyère sur le dessus puis enfournez votre gratin <strong>20 mn</strong> à 200°C.</p><p><em>Bon appétit !</em></p></div>"
+                ,
+                R.drawable.plat_gratin_aubergine, 30);
+
+
+        Plat sole = new Plat("Lieu",
+                "Découvrez les différents temps de cuisson de la sole, poisson très apprécié des gourmets !",
+                "<div><h1>Gratin d’aubergines</h1><h2>Temps de cuisson du gratin d’aubergines</h2><p>L<a title=\"Aubergine\" href=\"http://www.tempsdecuisson.net/les-legumes-et-feculents/aubergine\">‘aubergine</a>, légume composé à plus de 90% d’eau et riche de nombreux vitamines et minéraux, doit être cuite avec précaution pour conserver sa bonne tenue ainsi que ses bienfaits.</p><p>Commencez par éplucher les aubergines, puis découpez-les en rondelles.</p><p>Idéalement, saupoudrez les rondelles de sel puis faites-les dégorger pendant 1 heure; ce qui vous permettra d’obtenir un gratin qui ne rendra pas trop de jus.</p><p>Faites revenir les aubergines légèrement huilées dans une grande poêle, à feu moyen pendant <strong>10 mn</strong>.</p><p>Pour finir, disposez les aubergines accompagnées des aliments de votre choix (coulis de tomates, viande…), déposez une fine couche de gruyère sur le dessus puis enfournez votre gratin <strong>20 mn</strong> à 200°C.</p><p><em>Bon appétit !</em></p></div>"
+                ,
+                R.drawable.plat_gratin_aubergine, 30);
+        Plat thon = new Plat("Thon",
+                "Découvrez les différents temps de cuisson du thon, un poisson riche en protéines.",
+                "<div><h1>Thon</h1><h2>La cuisson du thon</h2><p>Le thon rouge, ou albacore, se déguste mi-cuit de manière à conserver sa chair tendre et savoureuse. Car si la cuisson du thon est simple, le principal danger est d’obtenir une chair trop cuite et beaucoup trop dure.</p><h3>A la poêle</h3><p>La meilleure façon d’obtenir un&nbsp;steak&nbsp;de thon tendre et de le faire revenir à la poêle.</p><p>Commencer par faire chauffer un filet d’huile à feu vif, puis déposez les morceaux de thon.</p><p>Faites-les revenir à feu vif pendant <strong>3 mn</strong> de chaque côté.</p><h3>En papillotes</h3><p>Cette cuisson permet à la chair du thon d’absorber et de restituer toutes les saveurs des ingrédients dont il est&nbsp;accommodé.</p><p>Une fois les papillotes prêtent, laissez-les cuir <strong>30 mn</strong> à <strong>200°C</strong>.</p><h3>Rôti au four</h3><p>La cuisson du thon au four dure <strong>30 mn</strong> et s’effectue dans un four préchauffé à <strong>210°C</strong>, thermostat 6 ou 7.</p></div>"
+                ,
+                R.drawable.plat_fruit_de_mer_thon, 3);
+        Plat raie = new Plat("Raie",
+                "Découvrez combien de temps cuire la raie afin d’obtenir un poisson dénué de tout aspect visqueux.",
+                "<div><h1>Raie</h1><h2>La cuisson de la raie</h2><p>Combien de temps cuire les ailes de raie ?</p><p>Dans la raie, seules les ailes sont&nbsp;comestibles, le corps ne se déguste pas. La raie est un poisson composé de beaucoup d’eau, et dont la chair contient un fort apport en protéine. Sa cuisson doit donc être bien maîtrisée afin de conserver la tendresse du poisson et maintenir ses qualités&nbsp;nutritionnelles.</p><p>Son aspect visqueux, totalement naturel et même synonyme de&nbsp;fraîcheur, &nbsp;peut être enlevé grâce à une cuisson maîtrisée.</p><p>Sachez également que la raie possède une chair presque dénuée&nbsp;d’arrêtes, ce qui en fait un poisson parfait pour les plus petits !</p><h3>CUISSON POCHÉE</h3><p>La cuisson pochée est la plus souvent utilisée, cette dernière étant facile à réaliser.&nbsp;Plongez les ailes de raie dans une eau bouillante pendant <strong>15 mn</strong> environ.</p><h3>CUISSON AU FOUR</h3><p>Dans un plat adapté, laissez cuire les ailes de raie pendant <strong>15 à 25 mn</strong> maximum, à 200°C.</p><h3>CUISSON A LA POÊLE</h3><p>Vous pouvez également faire revenir les ailes de raie à la poêle, accompagnées d’un peu de matière grasse, <strong>5 mn</strong> de chaque côté.</p><p><em>Pour&nbsp;<strong>enlever la peau</strong>&nbsp;de la raie facilement, commencez par pocher les ailes à l’eau bouillante pendant <strong>2mn</strong>. Ensuite, sur une surface plane, grattez la peau de chaque côté à l’aide d’un couteau.</em></p></div>"
+                ,
+                R.drawable.plat_fruit_de_mer_raie, 20);
+        Plat dorade = new Plat("Dorade",
+                "Au four, à la poêle, ou encore en croûte de sel, apprenez tout sur les différentes cuissons de la dorade !",
+                "<div><h1>Dorade</h1><h2>La cuisson de la dorade</h2><p>Au four, en papillotes, en croûte de sel, grillée au barbecue, ou simplement à la poêle… La dorade, ou daurade – qu’elle soit rose, grise ou royale -, est un poisson savoureux qui peut se cuire et&nbsp;s’accommoder&nbsp;de différentes manières.</p><p>La dorade présente un aspect luisant et rebondi, et une chair savoureuse, qui peut se déguster aussi bien nature&nbsp;que accommodée&nbsp;d’herbes aromatiques comme le <a title=\"Thym\" href=\"http://www.tempsdecuisson.net/dico/thym\">thym</a> ou encore les herbes de Provence…</p><h3>AU FOUR</h3><p>La cuisson de la dorade au four dure <strong>30 mn</strong>&nbsp;dans un four préchauffé à <strong>180°C</strong>.</p><h3>CUISSON EN PAPILLOTES</h3><p>Après avoir préparé vos dorades en papillotes, laissez-les cuire <strong>20 mn</strong> dans un four préchauffé à <strong>180°C</strong>.</p><h3>A LA POÊLE</h3><p>Pour faire revenir des filets de dorade, commencez par faire chauffer un filet d’huile d’olive dans votre poêle, puis saisissez chaque coté du poisson pendant environ <strong>1 mn</strong>.</p><h3>CUISSON EN&nbsp;CROÛTE&nbsp;DE SEL</h3><p>Une fois la dorade préparée et recouverte d’une épaisse couche de sel, environ 1 cm, laissez-la cuire<strong> 20 mn</strong> dans un four à <strong>200°C</strong>.</p><h3>AU BARBECUE</h3><p>Une dorade de taille importe cuit <strong>15 à 20 mn</strong> de chaque côté, <strong>10 à 15 mn</strong> pour les plus petites.</p></div>"
+                ,
+                R.drawable.plat_fruit_de_mer_dorade, 15);
+        Plat merlan= new Plat("Merlan",
+                "Apprenez tout de la cuisson du merlan, poisson à la chair délicate.",
+                "<div><h1>Merlan</h1><h2>La cuisson du merlan</h2><p><span style=\"font-family: Arial, Helvetica, sans-serif; font-size: small;\">Le merlan est un poisson à la chair fine et légèrement sucrée, qui s’effrite facilement. Sa cuisson doit donc être bien maîtrisée pour préserver sa chair.&nbsp;</span></p><p><span style=\"font-family: Arial, Helvetica, sans-serif; font-size: small;\">Sachez par ailleurs qu’il est préférable de ne pas enlever la peau du merlan avant de le faire cuire, afin de garder sa saveur et sa texture intacte.</span></p><p><span style=\"font-family: Arial, Helvetica, sans-serif; font-size: small;\">Le merlan se prépare entier ou en filet. Traditionnellement, il est&nbsp;<strong>frit «&nbsp;en colère&nbsp;» ou «&nbsp;enragé&nbsp;»</strong>&nbsp;: on lui fait mordre la queue pour faciliter sa manipulation et le faire passer plus facilement dans une poêle. Pour des raisons diététiques et pratiques, la friture est aujourd’hui un mode de préparation moins fréquent.</span></p><p><span style=\"font-family: Arial, Helvetica, sans-serif; font-size: small;\">On le prépare donc plus souvent&nbsp;<strong>entier et fariné, à la poêle ou au four</strong>. Il se cuisine également grillé, poché au vin, dans un bouillon aromatique, pané, dans les farces, les pains et les mousses, en papillote ou au citron. On peut accompagner le merlan de légumes ou de pommes de terre. Il est également fréquemment utilisé pour les&nbsp;<strong>soupes de poissons</strong>, auxquelles il apporte un certain moelleux.</span></p><p><span style=\"font-family: Arial, Helvetica, sans-serif; font-size: small;\">Sa chair fine et son goût légèrement sucré&nbsp;<strong>plaît généralement aux enfants</strong>. Cuisiner du merlan est donc un bon moyen pour leur apprendre à apprécier le poisson</span></p></div>"
+                ,
+                R.drawable.plat_fruit_de_mer_merlan, 30);
+
+
+
+
+        return new ArrayList<>(asList(
+                dorade,  moules, homard, truite,
+                crabe, bulots, tourteaux, barGrille, saumon, merlan,
+                langoustine, huitresgratinees,
+                crevettes, lotte, cabillaud, lieu, colin, sole,
+                thon, raie, coquilleSaintJaques, courtbouillon
+        ));
+
+    }
+
 }
