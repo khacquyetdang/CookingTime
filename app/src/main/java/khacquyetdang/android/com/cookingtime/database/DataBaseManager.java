@@ -48,6 +48,12 @@ public class DataBaseManager {
                 , R.drawable.categorie_fruit_de_mer);
         fruitdeMer.setPlats(setupPoissonFruitDeMers());
 
+        Categorie legumesCat = new Categorie("Les légumes et féculents",
+                "Découvrez les techniques de cuissons des légumes et féculents au four, à l’eau, à la vapeur, à la poêle, etc..."
+                , R.drawable.categorie_legumes);
+        legumesCat.setPlats(setUpLegumes());
+
+
         gratinCategorie.setPlats(setUpGratin());
         classiqueCategorie.setPlats(setUpClassiquePlat());
         dessertCategorie.setPlats(setUpDessert());
@@ -61,10 +67,8 @@ public class DataBaseManager {
                                 , R.drawable.categorie_bbq),
                         gratinCategorie,
                         viandeCategorie,
-                        new Categorie("Les légumes et féculents",
-                                "Découvrez les techniques de cuissons des légumes et féculents au four, à l’eau, à la vapeur, à la poêle, etc..."
-                                , R.drawable.categorie_legumes)
-                        )
+                        legumesCat
+                )
         );
 
     }
@@ -606,7 +610,88 @@ public class DataBaseManager {
                 crevettes, lotte, cabillaud, lieu, colin, sole,
                 thon, raie, coquilleSaintJaques, courtbouillon
         ));
+    }
+
+    public ArrayList<Plat> setUpLegumes() {
+
+        Plat aubergine = new Plat("Aubergine",
+                "Découvrez les temps de cuisson de l’aubergine au four et à l’eau bouillante.",
+                "TEMPS DE CUISSON DE L’AUBERGINE\n" +
+                        "L’inconvénient majeur lors de la cuisson de l’aubergine est que ce légume absorbe très rapidement la matière grasse. L’astuce est de dégorger l’aubergine (enlever le maximum d’eau contenue dans celle-ci).\n" +
+                        "\n" +
+                        "Cuisson au four : Préchauffez le four thermostat 6 (180°C) puis découpez l’aubergine dans la longueur en deux parties. bien taillader la pulpe avec la lame du couteau de façon à faire des entailles un peu profonde. Enfourner au four  durant 30 minutes. Pour une cuisson parfaite, l’aubergine doit être moelleuse.\n" +
+                        "\n" +
+                        "Cuisson à l’eau  : À la casserole dans l’eau bouillante, les aubergines doivent cuire 10 à 15 minutes selon leur taille."
+                , R.drawable.plat_legume_aubergine, 30);
+
+
+        Plat chouFleur = new Plat("Chou-fleur",
+                "Cuire votre chou-fleur à la vapeur dans votre autocuiseur ou à l’eau bouillante, c’est facile. Suivez le guide...",
+                "<div><h1>Chou-Fleur</h1><h2>Quel est le temps de cuisson d’un chou-fleur?</h2><p>Il existe plusieurs façons de faire cuire un chou-fleur, sachant qu’il se déguste tout aussi bien cru à l’apéritif accompagné d’une sauce.</p><h3>Cuisson du chou-fleur à l’eau bouillonnante</h3><p>Comptez <strong>entre 15 et 20 minutes</strong> de cuisson en fonction de la taille du chou-fleur. Pensez à saler votre eau de cuisson</p><h3>Cuisson du chou-fleur à la vapeur ou à l’aide d’un <a href=\"https://www.tempsdecuisson.net/shop/autocuiseur\">autocuiseur</a></h3><p>Comptez <strong>entre 5 et 10 minutes</strong> de cuisson en fonction de la taille du chou-fleur</p><h3>Cuisson du chou-fleur au Babycook<strong>&nbsp;</strong></h3><p>Celle-ci s’effectue avec le niveau 3 de votre Babycook, et dure environ <strong>15 mn</strong>.</p></div>",
+                R.drawable.plat_legume_chou_fleur,
+                15);
+
+        Plat pomme_de_terre
+                = new Plat("Pomme de terre",
+                "Avec ou sans patates ?",
+                "<div><h1>Pomme de terre</h1><p>La pomme de terre, en fonction de sa variété (ratte, grenaille, amandine…) et de sa taille peut se cuisiner de mille et une façons ou presque afin d’accompagner avec goût <a title=\"Les viandes\" href=\"http://www.tempsdecuisson.net/les-viandes\">viandes</a>, volailles et <a title=\"Poissons et fruits de mer\" href=\"http://www.tempsdecuisson.net/poissons-et-fruits-de-mer\">poissons</a>.</p><h3>Cuisson à l’eau</h3><p>Servies avec du beurre et du sel la pomme de terre à l’eau se cuit avec la peau une vingtaine de minute dans une eau bouillante salée.</p><h3>Cuisson au four</h3><p>Mode de cuisson idéal pour des pommes de terres de petits calibres la cuisson au four prend du temps. Comptez une bonne heure dans un four à 180°.</p><h3>Cuisson en papillote</h3><p>Parfait avec une viande rouge la <strong>pomme de terre en robe des champs</strong> est adaptée aux pommes de terres les plus grosses qui doivent être bien fermes. Cuites au four environ 1h30 dans du papier aluminium avec leur peau et sans graisse, elles peuvent être servies avec une sauce crème fraiche ciboulette échalotes.</p><h3>Cuisson à la poêle</h3><p>Pour faire sauter à la poêle vos pommes de terre, rien de plus simple.</p><p>Après les avoir épluchées puis coupées en dès, faîtes les revenir à feu vif dans une sauteuse avec un filet d’huile pendant <strong>15 à 20 mn.</strong></p><h3>Pommes «&nbsp;grenailles&nbsp;»</h3><p>«&nbsp;Façon Brasserie&nbsp;» la pomme de terre grenaille est fondante et généreusement grillée. Avec leur peau les pommes de terres sont cuites à l’eau une vingtaine de minute puis rôties à feu doux 30 minutes dans une grande coquelle en fonte avec de lui d’olive et un peu de beurre. N’hésitez pas à saler en fin de cuisson.</p><h3>Cuisson au Babycook</h3><p>Pour faire cuire des pommes de terre au Babycook utilisez le<strong> niveau 3</strong> de l’appareil, soit <strong>15 mn</strong> de cuisson.</p></div>",
+                R.drawable.plat_legume_pomme_de_terre, 15);
+
+
+        Plat carottes = new Plat("Carottes",
+                "A l’eau, à la vapeur, à la poêle, au four… Découvrez ici les différents modes et temps de cuisson des carottes, aliment star des régimes !",
+                "<div><h1>Carottes</h1><h2>Cuisson des carottes</h2><p>Aliment sain par excellence, la carotte peu se cuire de différentes façons. Cependant si vous souhaitez conserver au mieux tous ses nutriments, la cuisson &nbsp;des carottes à la vapeur est la meilleure option. Découvrez ici les différentes manières de faire cuire vos carottes.</p><p><span style=\"text-decoration: underline;\"><strong>A la vapeur</strong></span><strong> :</strong></p><p>Remplissez d’eau le fond de votre <a href=\"https://www.tempsdecuisson.net/shop/autocuiseur\">cocotte-minute</a>, placez-la à feu vif jusqu’à ce que l’eau frémisse.</p><p>Déposez dans le panier vos rondelles de carottes finement coupées, puis placez ce dernier dans la cocotte, en veillant à ce qu’il ne touche pas l’eau.</p><p>Refermez le couvercle. Quand la cocotte siffle, laissez cuire vos carottes<strong> 8 à 12 mn</strong> à feu moyen.</p><p><em>Faîtes varier le temps de cuisson pour obtenir des carottes plus ou moins croquantes !</em></p><p><span style=\"text-decoration: underline;\"><strong>A l’eau</strong></span><strong> :</strong></p><p>Portez à ébullition une grande casserole d’eau salée, puis laissez cuire vos carottes en rondelles pendant <strong>20 mn</strong>, à feu vif.</p><p><span style=\"text-decoration: underline;\"><strong>A la poêle</strong></span><strong> :</strong></p><p>Faîtes fondre un peu de matière grasse dans une sauteuse.</p><p>Déposez vos carottes coupées en rondelles et faîtes-les revenir à feu moyen pendant <strong>15 à 20 mn</strong> en les remuant régulièrement.</p><p><span style=\"text-decoration: underline;\"><strong>Au four</strong></span><strong> :</strong></p><p>Préchauffez votre four à 180 degrés.</p><p>Disposez vos carottes entières dans un plat, puis&nbsp;assaisonnez-les d’un filet d’huile d’olive et d’herbes aromatiques (<a title=\"Thym\" href=\"http://www.tempsdecuisson.net/dico/thym\">thym</a>, romarin…)</p><p>Recouvrez le plat de papier aluminium et laissez cuire le tout <strong>35 mn</strong>, à 180 degrés.</p><p><em><br></em></p><p>&nbsp;</p><p>&nbsp;</p></div>",
+                R.drawable.plat_legume_carrotte, 20);
+
+
+        Plat poivrons = new Plat("Poivrons",
+                "A l’eau, à la poêle, au four… Découvrez comment cuire vos poivrons sans qu’ils ne perdent de leur croquant.",
+                "<div><h1>Poivrons</h1><h2>Temps de cuisson du poivron</h2><p>Rouge, jaune, vert, peu importe la couleur… Seule la cuisson compte !&nbsp;Découvrez les différentes manières de cuire vos poivrons.</p><p><strong>Au four&nbsp;</strong></p><p>Préchauffez votre four à 240 degrés.</p><p>Disposez les poivrons en entier dans un plat à four traditionnel, ajoutez un filet d’huile d’olive, quelques aromates (<a title=\"Thym\" href=\"http://www.tempsdecuisson.net/dico/thym\">thym</a>, laurier…), et enfournez le tout pendant <strong>20 mn</strong>.</p><p><em>Une fois cuite, la peau du poivron se décollera facilement.</em></p><p><strong>A la poêle</strong></p><p>Faîtes revenir vos poivrons coupés en lamelles ou en dès, et accompagnés d’un filet d’huile d’olive pendant <strong>15 mn</strong>.</p><p><strong>A la vapeur</strong></p><p>Après avoir coupé vos poivrons, faîtes les mijoter dans votre auto-cuiseur pendant <strong>15 mn</strong>.</p><p><em>Astuce : si vous souhaitez les manger crus, faîtes bouillir vos poivrons entiers dans de l’eau salée pendant <strong>10 mn</strong>, la peau se décollera parfaitement !</em></p></div>",
+                R.drawable.plat_legume_poivron, 10);
+
+
+        Plat brocolis = new Plat("Brocolis",
+                "Légume très riche en vitamines, fibres et minéraux, le brocolis doit se cuire avec précaution afin de conserver au mieux ses nutriments et sa couleur.",
+                "<div><h1>Brocolis</h1><h2>Temps de cuisson des brocolis</h2><p>Le brocolis peut se cuire rapidement et de différentes manières.</p><p><strong><span style=\"text-decoration: underline;\">A la vapeur</span> :</strong></p><p>Faites cuire vos brocolis <strong>5 mn</strong>&nbsp;et pas plus dans votre <a href=\"https://www.tempsdecuisson.net/shop/autocuiseur\">auto-cuiseur</a>, afin de ne pas perdre leur croquant.</p><p><strong><span style=\"text-decoration: underline;\">A l’eau</span> :</strong></p><p>Dans une casserole d’eau bouillante et salée, laissez cuire vos brocolis pendant <strong>8 mn.</strong></p><p><strong><span style=\"text-decoration: underline;\">A la poêle</span> :</strong></p><p>Faites rissoler à feu vif pendant <strong>10 mn</strong> vos brocolis avec un peu de matière grasse.</p></div>"
+                ,
+                R.drawable.plat_legume_brocolis, 10);
+
+
+        Plat ratatouille = new Plat("Ratatouille",
+                "Si la recette de la ratatouille possède plusieurs variantes, son temps de cuisson ne varie pas. Découvrez-le et réalisez enfin une ratatouille parfaitement cuite !",
+                "<div><h1>Ratatouille</h1><h2>Temps de cuisson de la ratatouille</h2><p>La ratatouille, plat d’origine niçoise aux saveurs parfumées de Provence et d’été, ne pardonne aucune faute de cuisson. Composée généralement de tomates, de courgettes, de poivrons, d’aubergines, d’oignons et d<a title=\"Ail\" href=\"http://www.tempsdecuisson.net/dico/ail\">‘ail</a>, cette recette méditerranéenne accompagne à merveille les viandes, les <a title=\"Les viandes\" href=\"http://www.tempsdecuisson.net/les-viandes\">grillades</a> et les poissons.</p><p>Il existe deux manières de faire cuire la ratatouille. La première, un peu plus longue, consiste à faire cuire l’un après l’autre chaque légume. La deuxième se réalise en mélangeant tous les légumes et en les laissant mijoter ensemble.</p><p><strong>Cuisson de la ratatouille en séparant les légumes :</strong></p><p>Commencez par faire cuire vos tomates.</p><p>Découpez-les en quartier puis faîtes-les revenir <strong>10 mn</strong> à feu doux dans une casserole huilée.</p><p>Ensuite, faîtes cuire à la poêle vos aubergines découpées en dès pendant <strong>20 mn environ</strong>.</p><p>Place aux courgettes ! Laissez-les cuire découpées en rondelles pendant <strong>20 mn environ</strong>, toujours à la poêle.</p><p>Pour cuire vos poivrons, découpez-les sur la longueur puis faîtes-les sauter à la poêle pendant <strong>15 mn</strong>.</p><p>Les oignons se font revenir à feu vif dans une poêle jusqu’à ce qu’ils blondissent.</p><p>Pour finir, mélangez le tout dans une grande casserole puis laissez mijoter votre plat <strong>10 mn</strong> supplémentaires, accompagné d’herbes de Provence et d’<a title=\"Ail\" href=\"http://www.tempsdecuisson.net/dico/ail\">ail</a>.</p><p><strong>Cuisson de la ratatouille en mélangeant les légumes :</strong></p><p>Mélangez dans votre cocotte-minute les tomates en quartiers, les aubergines en dès, les courgettes en rondelles, sans oublier les oignons, l’ail et les aromates.</p><p>Lorsque votre cocotte siffle, laissez cuire le tout pendant <strong>15 mn</strong>.</p><p>Ensuite, faîtes mijoter votre ratatouille <strong>10 mn</strong> supplémentaires à feu doux et sans couvercle afin que toutes les saveurs se mélangent bien.</p><p><em>Servez-la chaude ou bien dégustez-la froide. Bon appétit !</em></p><p>&nbsp;</p><p>&nbsp;</p></div>"
+                ,
+                R.drawable.plat_legume_ratatouille, 45);
+
+
+        Plat courgettes = new Plat("Courgettes",
+                "Légume très riche en vitamines, fibres et minéraux, le brocolis doit se cuire avec précaution afin de conserver au mieux ses nutriments et sa couleur.",
+                "<div><h2>Temps de cuisson des courgettes</h2><p>Composée à 95 % d’eau, la courgette est un aliment à faible apport calorifique mais riche en oligo-éléments,minéraux et vitamines.</p><p>Il existe plusieurs manières de cuire les courgettes, toutes doivent être bien maîtrisées afin de conserver les bienfaits du légume. Notez que les cuissons à l’eau et à la vapeur sont celles qui vous permettront de garder au mieux tous les nutriments des courgettes.</p><p><em>Il est préférable d’assaisonner les courgettes à la fin de leur cuisson, afin que le sel ne&nbsp;dessèche&nbsp;pas le légume et que celui-ci garde toute sa tenue.</em></p><h3>Cuisson à l’eau</h3><p>Après avoir préparé vos courgettes, plongez-les dans une casserole d’eau légèrement salée et laissez-les cuire pendant environ <strong>15 mn.</strong></p><h3>Cuisson à la vapeur</h3><p>Une fois vos courgettes coupées en rondelles, placez-les dans votre <a href=\"https://www.tempsdecuisson.net/shop/autocuiseur\">auto-cuiseur</a> pendant<strong> 9 mn</strong>.</p><h3>Cuisson à la poêle</h3><p>Ce mode de cuisson est idéal si vous souhaitez cuisiner plusieurs légumes à la fois ou préparer une bonne ratatouille !</p><p>Coupez vos courgettes en fines rondelles puis faites-les revenir pendant <strong>15 mn</strong> à feu modéré, accompagnées d’un filet d’huile.</p><h3>Courgettes au four</h3><p>Si vous souhaitez cuisiner des courgettes farcies, vous devez opter pour la cuisson au four.</p><p>Après les avoir préparées, enfournez-les pendant <strong>20 mn</strong> à 200/220°C.</p><h3>Cuisson au Babycook</h3><p>Les bébés&nbsp;raffolent&nbsp;des courgettes et leur cuisson au Babycook est très rapide.</p><p>Elle s’effectue en utilisant le<strong> niveau 2</strong> de votre appareil, et dure environ <strong>10 mn</strong>.</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></div>"
+                ,
+                R.drawable.plat_legume_courgette, 10);
+
+
+        Plat chouBlanc = new Plat("CHOU BLANC",
+                "Préparez de délicieuses choucroutes ou salades avec le bon temps de cuisson du chou blanc !",
+                "<div><h1>Chou blanc</h1><h2>La cuisson du chou blanc</h2><p>Le chou blanc est une variété de chou pouvant peser jusqu’à plusieurs kilos. Issu de la même famille que le <a title=\"Navet\" href=\"http://www.tempsdecuisson.net/les-legumes-et-feculents/le-navet\">navet</a>, et le radis, sa saveur est relativement proche.</p><p>Composé de feuilles lisses, vert pâle à l’extérieur et blanches à l’intérieur, le chou blanc permet la préparation de nombreuses salades rafraîchissantes, idéales au printemps.</p><p>En hiver, c’est le chou blanc que l’on retrouve avec plaisir dans nos choucroutes traditionnelles !</p><p>Gorgé de vitamines et de minéraux, ce légume doit être cuit avec précaution en limitant sa cuisson à 15 minutes maximum.</p><h3>CUISSON A LA CASSEROLE</h3><p>C’est la cuisson la plus saine.</p><p>Après avoir enlevé les feuilles extérieures et coupé le chou en 4, en veillant à retirer le trognon; laissez cuire les lamelles de chou dans une eau bouillante pendant <strong>15 mn</strong>.</p><h3>CUISSON A LA&nbsp;POÊLE</h3><p>Ce mode de cuisson offre un chou plus croquant.</p><p>Préparez votre chou comme détaillé ci-dessus, puis faites revenir les lamelles, accompagnées d’un peu de matière grasse, pendant <strong>12 minutes</strong>.</p></div>"
+                ,
+                R.drawable.plat_legume_chou_blanc, 15);
+
+
+        Plat chataigne = new Plat("Châtaigne",
+                "Réchauffez vos soirées automnales avec les bons temps de cuisson de la châtaigne !",
+                "<div><h2>Cuisson des châtaignes</h2><p>A consommer sans modération tout au long de l’automne, la châtaigne contient peu de matières grasses et de nombreux oligo-éléments. C’est l’aliment parfait pour prendre des forces avant l’hiver !</p><p>Découvrez les différentes façons de cuire les châtaignes.</p><h3>Au four</h3><p>Préchauffez votre four à 220 degrés.</p><p>Fendez toutes vos châtaignes à l’aide d’un couteau.</p><p>Déposez-les sur une plaque puis laissez-les cuire pendant <strong>20&nbsp;mn</strong>.</p><p><em>Retournez-les à mi-cuisson pour les griller de manière uniforme.</em></p><h3>A l’eau</h3><p>Plongez-les dans une grande casserole d’eau bouillante et laissez-les cuire<strong> 45&nbsp;mn</strong> à feu vif.</p><p><em>Ne les entaillez pas afin qu’elles ne se gorgent pas d’eau.</em></p><h3>A la poêle percée</h3><p>Entaillez les châtaignes, et faîtes-les revenir à feu vif dans une poêle percée pendant <strong>15 à 20 mn</strong>.</p><p><em>Vous pouvez vous servir de ce mode de cuisson si vous&nbsp;possédez&nbsp;une cheminée, optez alors pour une poêle percée à manche long.</em></p><h3>Au barbecue</h3><p>Incisez vos châtaignes puis déposez-les sur une grille.</p><p>Laissez-les griller au dessus des braises pendant <strong>20 mn</strong>.</p><p><em>Vous pouvez aussi utiliser une plancha pour les griller, c’est le même temps de cuisson qu’au barbecue !</em></p></div>"
+                ,
+                R.drawable.plat_legume_chataigne, 20);
+
+
+        return new ArrayList<>(asList(
+                chouFleur, pomme_de_terre, carottes, poivrons,
+                brocolis, aubergine, chouBlanc, courgettes, ratatouille
+                , chataigne
+        ));
 
     }
+
 
 }
