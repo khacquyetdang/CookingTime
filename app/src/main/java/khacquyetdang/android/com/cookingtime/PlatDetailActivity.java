@@ -5,6 +5,7 @@ import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -27,6 +28,7 @@ import khacquyetdang.android.com.cookingtime.database.Plat;
 public class PlatDetailActivity extends AppCompatActivity {
     private final String TAG = PlatDetailActivity.class.getClass().toString();
     private ImageView _platImageAppBar;
+    private AppBarLayout htab_appbar;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -91,5 +93,6 @@ public class PlatDetailActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
 
 }

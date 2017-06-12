@@ -62,9 +62,6 @@ public class DataBaseManager {
                 asList(classiqueCategorie,
                         dessertCategorie,
                         fruitdeMer,
-                        new Categorie("Barbecue",
-                                "Retrouvez ici tous les temps de cuisson pour vos viandes et poissons au barbecue."
-                                , R.drawable.categorie_bbq),
                         gratinCategorie,
                         viandeCategorie,
                         legumesCat
@@ -324,7 +321,13 @@ public class DataBaseManager {
         Plat platFlanAuxOeufs = new Plat("Flan aux oeufs",
                 "Une préparation classique et simple. Pas de quoi en faire tout un flan !",
                 "<div><h1>Flan aux oeufs</h1><h2>Temps de cuisson d’un flan aux oeufs</h2><p style=\"text-align: justify;\">Commencer par préchauffer votre four à 150° (thermostat 5). Une fois la préparation de votre votre flan terminée, faite le cuire au four pendant <strong>45 minutes</strong> à <strong>150°</strong>.</p><p style=\"text-align: justify;\">Pour vérifier la cuisson, planter un couteau. S’il ressort sans trace, la cuisson est terminée. Laisser ensuite reposer votre flan au réfrigérateur pendant plusieurs heures.</p></div>",
-                R.drawable.plat_flan_aux_oeufs, 15);
+                R.drawable.plat_dessert_flan_aux_oeufs, 15);
+
+
+        Plat plat_dessert_panettone = new Plat("Panettone",
+                "Découvrez combien de temps cuit le panettone, dessert italien traditionnel de Noël...",
+                "<div><h2>La cuisson du panettone</h2><p>&nbsp;</p><p>Le panettone est un dessert originaire d’Italie, plus précisément du Piémont. C’est une brioche fourrée aux raisons secs, aux fruits confits et aux zestes d’agrumes, qui fait partie des desserts&nbsp;traditionnels&nbsp;de&nbsp;Noël.</a></p><p>Sa préparation simple nécessite tout de même un respect absolu du temps de cuisson, pour obtenir un panettone moelleux comme une brioche à l’intérieur, et bien doré à l’extérieur.</p><h3>CUISSON AU FOUR</h3><p>Commencez par enfourner votre préparation à<strong> 200°C</strong> (thermostat 6/7), puis laissez cuire le panettone<strong> 10 mn.</strong><br>Ensuite, baissez votre &nbsp;four à <strong>150°C</strong> (thermostat 5) et continuez à faire cuire votre dessert <strong>30 à 40 mn</strong> maximum.</p><p><em>Le panetonne est délicieux accompagné de confiture… Bon appétit !</em></p></div>",
+                R.drawable.plat_dessert_panettone, 40);
 
 
         Plat dessertFondantChocolat = new Plat("Fondant au chocolat",
@@ -407,7 +410,7 @@ public class DataBaseManager {
                 platdessertBrownie, platGateauAuYaourt,
                 platCremeAnglaise, platPateSable, platFlanAuxOeufs, dessertFondantChocolat,
                 platdesserttarteauPommes, platdessertCremeAuCaramel,
-                financiers, crumble, clafoutis, meringue, platdessertPommesAuFour
+                financiers, crumble, clafoutis, meringue, platdessertPommesAuFour, plat_dessert_panettone
         ));
 
     }

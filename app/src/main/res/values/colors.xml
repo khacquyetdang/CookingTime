@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">@color/cooking_color</color>
     <color name="white">#FFFFFF</color>
     <color name="colorBlueSky">#59d2ae</color>
     <color name="colorTimeCooking">#8badd4</color>
@@ -17,4 +17,6 @@
     <color name="accent_500">#E91E63</color>
     <!--Pink 700-->
     <color name="accent_700">#C2185B</color>
+    <!--Pink 700-->
+    <color name="cooking_color">#edaf27</color>
 </resources>
