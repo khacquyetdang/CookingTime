@@ -20,6 +20,8 @@
         <activity android:name=".PlatDetailActivity"
             android:theme="@style/MyTheme.Detail">
         </activity>
+        <activity android:name=".MinuteurActivity">
+        </activity>
     </application>
 
 </manifest>

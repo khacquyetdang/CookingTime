@@ -19,4 +19,15 @@
     <color name="accent_700">#C2185B</color>
     <!--Pink 700-->
     <color name="cooking_color">#edaf27</color>
+    <color name="cooking_color_start">#edaf27</color>
+    <color name="cooking_color_end">#edcc27</color>
+    <color name="cooking_color_pressed">#edea27</color>
+
+    <color name="stop_cooking_color">#FF0000</color>
+    <color name="stop_cooking_color_start">#FD0000</color>
+    <color name="stop_cooking_color_end">#FF4000</color>
+    <color name="stop_cooking_color_pressed">#FF4000</color>
+
+    <color name="colorTotal">#ffae00</color>
+
 </resources>

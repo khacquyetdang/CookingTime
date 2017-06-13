@@ -67,13 +67,13 @@
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
+        android:id="@+id/fab_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:clickable="true"
         android:src="@drawable/icons_start_cook"
-        android:backgroundTint="@color/cooking_color"
+        app:backgroundTint="@color/cooking_color"
         app:layout_anchor="@id/platdetailscrollview"
         app:layout_anchorGravity="bottom|right|end"/>
 </android.support.design.widget.CoordinatorLayout>

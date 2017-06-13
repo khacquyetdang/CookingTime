@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="5"
+    tools:context="khacquyetdang.android.com.cookingtime.MinuteurActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3.5">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/circle_shape"
+            android:max="500"
+            android:progress="0"
+            android:progressDrawable="@drawable/circular_progress_bar" />
+
+        <LinearLayout
+            android:id="@+id/timeLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
+
+
+            <EditText
+                android:id="@+id/timeEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:inputType="time"/>
+
+            <TextView
+                android:id="@+id/time_txt_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_centerInParent="true"
+                android:text="00:00:00"
+                android:textSize="@dimen/text_minuterie"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/start_cooking_btn"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/rounded_btn"
+                android:padding="10dp"
+                android:text="@string/start_cooking" />
+
+            <Button
+                android:id="@+id/stop_cooking_btn"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/rounded_btn_stop"
+                android:padding="10dp"
+                android:text="@string/stop_cooking" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Minuterie de cuisine</string>
     <string name="time_cooking_in_minutes">Environ %1$d minutes</string>
+    <string name="start_cooking">JE LANCE LE MINUTEUR</string>
+    <string name="stop_cooking">JE REMETS A ZERO</string>
+
 </resources>

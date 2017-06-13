@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Kitchen timer</string>
     <string name="time_cooking_in_minutes">~ %1$d minutes</string>
+    <string name="start_cooking">START COOKING</string>
+    <string name="stop_cooking">STOP COOKING</string>
+
 </resources>
