@@ -3,6 +3,7 @@ package khacquyetdang.android.com.cookingtime;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.app.TimePickerDialog;
+import android.icu.util.Calendar;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
@@ -20,6 +21,8 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.TimePicker;
+
+import java.util.Locale;
 
 import khacquyetdang.android.com.cookingtime.Utility;
 import khacquyetdang.android.com.cookingtime.database.Plat;
@@ -81,20 +84,72 @@ public class MinuteurActivity extends AppCompatActivity {
                 countDownTimer = null;
                 timeEditText.setEnabled(true);
                 timeEditText.setInputType(InputType.TYPE_DATETIME_VARIATION_TIME);
-                timeEditText.setFocusable(true);
+                timeEditText.setFocusableInTouchMode(true);
             }
         });
         timeEditText = (EditText) findViewById(R.id.timeEditText);
         timeEditText.setText(Utility.timeToStr(currentTime));
+
         timeEditText.addTextChangedListener(new TextWatcher() {
+            private String current = "";
+            private String hhmmss= "00:00:00";
+
+
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
             }
 
             @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (!s.toString().equals(current)) {
+                    String clean = s.toString().replaceAll("[^\\d.|^:]", "");
+                    String cleanC = current.replaceAll("[^\\d.|^:]", "");
 
+                    int cl = clean.length();
+                    int sel = cl;
+                    for (int i = 2; i <= cl && i < 6; i += 2) {
+                        sel++;
+                    }
+                    //Fix for pressing delete next to a forward slash
+                    if (clean.equals(cleanC)) sel--;
+
+                    if (clean.length() < 8){
+                        clean = clean + hhmmss.substring(clean.length());
+                    }else{
+                        //This part makes sure that when we finish entering numbers
+                        //the date is correct, fixing it otherwise
+                        int hh  = Integer.parseInt(clean.substring(0,2));
+                        int mm  = Integer.parseInt(clean.substring(3,5));
+                        int ss = Integer.parseInt(clean.substring(6,8));
+
+                        if(hh > 24) {
+                            hh = 24;
+                        }
+                        if (hh < 0)
+                        {
+                            hh = 0;
+                        }
+                        if (mm > 60)
+                        {
+                            mm= 60;
+                        }
+                        if (ss > 60)
+                        {
+                            ss= 60;
+                        }
+                        clean = String.format(hhmmss,hh, mm, ss);
+                    }
+
+                    /*clean = String.format(hhmmss, clean.substring(0, 2),
+                            clean.substring(3, 5),
+                            clean.substring(6, 8));*/
+
+                    sel = sel < 0 ? 0 : sel;
+                    current = clean;
+                    timeEditText.setText(current);
+                    timeEditText.setSelection(sel < current.length() ? sel : current.length());
+                }
             }
 
             @Override
@@ -131,7 +186,7 @@ public class MinuteurActivity extends AppCompatActivity {
                 timeTxtView.setText(Utility.timeToStr(0));
                 timeEditText.setEnabled(true);
                 timeEditText.setInputType(InputType.TYPE_DATETIME_VARIATION_TIME);
-                timeEditText.setFocusable(true);
+                timeEditText.setFocusableInTouchMode(true);
                 progressBar.setProgress(currentTime);
 
             }
