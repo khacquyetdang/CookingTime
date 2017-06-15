@@ -24,6 +24,7 @@ import android.widget.TimePicker;
 
 import java.util.Locale;
 
+import br.com.sapereaude.maskedEditText.MaskedEditText;
 import khacquyetdang.android.com.cookingtime.Utility;
 import khacquyetdang.android.com.cookingtime.database.Plat;
 
@@ -38,7 +39,7 @@ public class MinuteurActivity extends AppCompatActivity {
     private TextView timeTxtView;
     private Button stop_cooking_btn;
     private Button start_cooking_btn;
-    private EditText timeEditText;
+    private MaskedEditText timeEditText;
 
     public View timeLayout;
     private int currentTime;
@@ -87,9 +88,9 @@ public class MinuteurActivity extends AppCompatActivity {
                 timeEditText.setFocusableInTouchMode(true);
             }
         });
-        timeEditText = (EditText) findViewById(R.id.timeEditText);
+        timeEditText = (MaskedEditText) findViewById(R.id.timeEditText);
         timeEditText.setText(Utility.timeToStr(currentTime));
-
+        //timeEditText.addTextChangedListener(new D);
         timeEditText.addTextChangedListener(new TextWatcher() {
             private String current = "";
             private String hhmmss= "00:00:00";
@@ -102,65 +103,18 @@ public class MinuteurActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (!s.toString().equals(current)) {
-                    String clean = s.toString().replaceAll("[^\\d.|^:]", "");
-                    String cleanC = current.replaceAll("[^\\d.|^:]", "");
-
-                    int cl = clean.length();
-                    int sel = cl;
-                    for (int i = 2; i <= cl && i < 6; i += 2) {
-                        sel++;
-                    }
-                    //Fix for pressing delete next to a forward slash
-                    if (clean.equals(cleanC)) sel--;
-
-                    if (clean.length() < 8){
-                        clean = clean + hhmmss.substring(clean.length());
-                    }else{
-                        //This part makes sure that when we finish entering numbers
-                        //the date is correct, fixing it otherwise
-                        int hh  = Integer.parseInt(clean.substring(0,2));
-                        int mm  = Integer.parseInt(clean.substring(3,5));
-                        int ss = Integer.parseInt(clean.substring(6,8));
-
-                        if(hh > 24) {
-                            hh = 24;
-                        }
-                        if (hh < 0)
-                        {
-                            hh = 0;
-                        }
-                        if (mm > 60)
-                        {
-                            mm= 60;
-                        }
-                        if (ss > 60)
-                        {
-                            ss= 60;
-                        }
-                        clean = String.format(hhmmss,hh, mm, ss);
-                    }
-
-                    /*clean = String.format(hhmmss, clean.substring(0, 2),
-                            clean.substring(3, 5),
-                            clean.substring(6, 8));*/
-
-                    sel = sel < 0 ? 0 : sel;
-                    current = clean;
-                    timeEditText.setText(current);
-                    timeEditText.setSelection(sel < current.length() ? sel : current.length());
-                }
             }
 
             @Override
             public void afterTextChanged(Editable editable) {
-                try {
-                    currentTime = Utility.timeStrToSec(timeEditText.getText().toString());
-                    progressBar.setMax(currentTime);
-                    timeTxtView.setText(Utility.timeToStr(currentTime));
-                } catch (Exception e){
-                    Log.e(MinuteurActivity.class.getSimpleName(), e.getMessage());
+                currentTime = Utility.timeStrToSec(timeEditText.getText().toString());
+                progressBar.setMax(currentTime);
+                if (Utility.timeToStr(currentTime).equals(timeEditText.getText().toString()) == false)
+                {
+                    timeEditText.setText(Utility.timeToStr(currentTime));
                 }
+                timeTxtView.setText(Utility.timeToStr(currentTime));
+
             }
         });
     }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:mask="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -31,17 +32,18 @@
             android:layout_centerInParent="true"
             android:orientation="vertical">
 
-
-            <EditText
+            <br.com.sapereaude.maskedEditText.MaskedEditText
                 android:id="@+id/timeEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:ems="8"
-                android:minEms="8"
-                android:maxEms="8"
-                android:inputType="time"/>
-
+                android:layout_centerInParent="true"
+                android:inputType="time"
+                android:typeface="monospace"
+                mask:allowed_chars="1234567890"
+                mask:mask="##:##:##"
+                android:hint="001230"
+                app:keep_hint="true"/>
             <TextView
                 android:id="@+id/time_txt_view"
                 android:layout_width="wrap_content"
