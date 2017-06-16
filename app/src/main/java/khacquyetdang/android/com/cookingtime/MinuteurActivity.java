@@ -44,6 +44,7 @@ public class MinuteurActivity extends AppCompatActivity {
     public View timeLayout;
     private int currentTime;
     private CountDownTimer countDownTimer;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,13 +79,11 @@ public class MinuteurActivity extends AppCompatActivity {
                 progressBar.setProgress(0);
                 timeTxtView.setText(Utility.timeToStr(0));
                 timeEditText.setText(Utility.timeToStr(0));
-                if (countDownTimer != null)
-                {
+                if (countDownTimer != null) {
                     countDownTimer.cancel();
                 }
                 countDownTimer = null;
                 timeEditText.setEnabled(true);
-                timeEditText.setInputType(InputType.TYPE_DATETIME_VARIATION_TIME);
                 timeEditText.setFocusableInTouchMode(true);
             }
         });
@@ -92,9 +91,6 @@ public class MinuteurActivity extends AppCompatActivity {
         timeEditText.setText(Utility.timeToStr(currentTime));
         //timeEditText.addTextChangedListener(new D);
         timeEditText.addTextChangedListener(new TextWatcher() {
-            private String current = "";
-            private String hhmmss= "00:00:00";
-
 
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -107,10 +103,25 @@ public class MinuteurActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable editable) {
-                currentTime = Utility.timeStrToSec(timeEditText.getText().toString());
+                String timeEditTextStr = timeEditText.getText().toString();
+                String[] timeStrSplitted = timeEditTextStr.split(":");
+                if (Integer.parseInt(timeStrSplitted[0]) >= 12) {
+                    timeStrSplitted[0] = "12";
+                }
+                if (Integer.parseInt(timeStrSplitted[1]) >= 59) {
+                    timeStrSplitted[1] = "59";
+                }
+
+                if (Integer.parseInt(timeStrSplitted[2]) >= 59) {
+                    timeStrSplitted[2] = "59";
+                }
+
+                timeEditTextStr = timeStrSplitted[0] + ":" + timeStrSplitted[1]
+                        + ":" + timeStrSplitted[2];
+
+                currentTime = Utility.timeStrToSec(timeEditTextStr);
                 progressBar.setMax(currentTime);
-                if (Utility.timeToStr(currentTime).equals(timeEditText.getText().toString()) == false)
-                {
+                if (Utility.timeToStr(currentTime).equals(timeEditText.getText().toString()) == false) {
                     timeEditText.setText(Utility.timeToStr(currentTime));
                 }
                 timeTxtView.setText(Utility.timeToStr(currentTime));
@@ -120,8 +131,7 @@ public class MinuteurActivity extends AppCompatActivity {
     }
 
 
-    private void startTimer()
-    {
+    private void startTimer() {
         timeEditText.setFocusable(false);
         timeEditText.setEnabled(false);
         final long millisInFuture = currentTime * 1000;
@@ -130,16 +140,15 @@ public class MinuteurActivity extends AppCompatActivity {
             @Override
             public void onTick(long timeRemainInMillSecond) {
                 int timeRemainInSec = (int) timeRemainInMillSecond / 1000;
-                timeTxtView.setText(Utility.timeToStr(timeRemainInSec ));
+                timeTxtView.setText(Utility.timeToStr(timeRemainInSec));
                 int progress = (int) (millisInFuture - timeRemainInMillSecond) / 1000;
-                progressBar.setProgress(progress );
+                progressBar.setProgress(progress);
             }
 
             @Override
             public void onFinish() {
                 timeTxtView.setText(Utility.timeToStr(0));
                 timeEditText.setEnabled(true);
-                timeEditText.setInputType(InputType.TYPE_DATETIME_VARIATION_TIME);
                 timeEditText.setFocusableInTouchMode(true);
                 progressBar.setProgress(currentTime);
 
